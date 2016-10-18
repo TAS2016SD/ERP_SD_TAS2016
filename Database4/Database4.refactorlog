@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="603e381d-677e-4657-9365-c30f3f82f406" ChangeDateTime="10/18/2016 20:46:31">
+    <Property Name="ElementName" Value="[dbo].[Klienci].[Adres email]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Klienci]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Adres_email" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="41a610e9-e789-4f03-9b05-68673371f5e5" ChangeDateTime="10/18/2016 21:09:09">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Miejsce_skladowania" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="40365eef-9e25-49b6-8062-4fdc52dbe3be" ChangeDateTime="10/18/2016 21:11:13">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id Materiału]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Materiału" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="01a843ba-ea9e-4578-8ea8-2af4f6658ef1" ChangeDateTime="10/18/2016 21:11:29">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id_Materiału]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Materialu" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="60a4eb72-ccbf-4b9b-aa09-25876a6fbe89" ChangeDateTime="10/18/2016 21:13:48">
+    <Property Name="ElementName" Value="[dbo].[Zlecenia].[Id_klienta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Zlecenia]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_odbiorcy" />
+  </Operation>
+</Operations>
