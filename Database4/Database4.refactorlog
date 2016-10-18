@@ -35,4 +35,46 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Id_odbiorcy" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="3fbb14a2-c20b-4fd6-805e-401929bcac53" ChangeDateTime="10/18/2016 21:54:39">
+    <Property Name="ElementName" Value="[dbo].[Zlecenia_poz].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Zlecenia_poz]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_zlecenia" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7c755383-e926-4bfe-98f3-8b8e00ae019c" ChangeDateTime="10/18/2016 22:04:42">
+    <Property Name="ElementName" Value="[dbo].[Rabaty].[Data zakónczenia]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Rabaty]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Data zakonczenia" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1d43bcf8-5cb3-4a82-875e-450149c8506e" ChangeDateTime="10/18/2016 22:05:56">
+    <Property Name="ElementName" Value="[dbo].[RabatyKlient].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RabatyKlient]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_klienta" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3109ed59-f907-426c-a1ad-ff2b04472c6a" ChangeDateTime="10/18/2016 22:07:59">
+    <Property Name="ElementName" Value="[dbo].[Rabat_material].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Rabat_material]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_rabatu" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ab0864f7-2e97-4fd5-8b94-be679c3521ee" ChangeDateTime="10/18/2016 22:08:47">
+    <Property Name="ElementName" Value="[dbo].[Rabat_material].[Id_rabatu]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Rabat_material]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_materialu" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8ce3fe9e-dbe3-4af6-8c21-7e21fbc763e8" ChangeDateTime="10/18/2016 22:08:54">
+    <Property Name="ElementName" Value="[dbo].[Rabat_material].[Id_materialu]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Rabat_material]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_rabatu" />
+  </Operation>
 </Operations>

@@ -62,7 +62,11 @@
     <Build Include="Klienci.sql" />
     <Build Include="Materialy.sql" />
     <Build Include="Status_magazynu.sql" />
-    <Build Include="Zlecenia.sql" />
+    <Build Include="ZleceniaNag.sql" />
+    <Build Include="Zlecenia_poz.sql" />
+    <Build Include="Rabaty.sql" />
+    <Build Include="RabatyKlient.sql" />
+    <Build Include="Rabat_material.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database4.refactorlog" />

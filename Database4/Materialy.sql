@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Materiały]
+﻿CREATE TABLE [dbo].[Materialy]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
     [Nazwa] NCHAR(30) NOT NULL, 

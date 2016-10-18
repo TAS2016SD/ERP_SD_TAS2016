@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Zlecenia]
+﻿CREATE TABLE [dbo].[ZleceniaNag]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
     [Id_odbiorcy] INT NOT NULL, 
