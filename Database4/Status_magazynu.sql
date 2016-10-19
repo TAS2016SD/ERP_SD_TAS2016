@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Table1]
+﻿CREATE TABLE [dbo].[Stan_magazynu]
 (
 	[Miejsce_skladowania] NCHAR(10) NOT NULL, 
     [Id_Materialu] INT NULL, 
