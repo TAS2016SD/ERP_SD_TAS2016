@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
+<!--	Meta-->
 	<meta charset="utf-8">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+<!--	Links-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/superhero/bootstrap.min.css" rel="stylesheet" />
+	
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<title>Minimum Bootstrap HTML Skeleton</title>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--     Scripts-->
+     
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+     
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    
     <script src="angular/angular.module.js"></script>
+    
 </head>
 
-<body>
+    <body>
 
-<div ng-app="app">
+    <div ng-app="app">
   <div ui-view name="nav"></div>
 
   <div class="container">
-    <div ui-view name="content"></div>
+    <div ui-view name="content">Container</div>
   </div>
 
   <script type="text/ng-template" id="navbar.html">
@@ -53,9 +60,11 @@
               <span class="visible-xs navbar-brand">Sidebar menu</span>
             </div>
     -->
+<!--
                <div class="navbar-header">
-                    <a class="navbar-brand" ui-sref="landingpage">LandingPage</a>
+                    <a class="navbar-brand" ui-sref="landingpage">LandingPage</a><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/superhero/bootstrap.min.css" rel="stylesheet" />
                 </div>
+-->
                 <div class="navbar-collapse collapse sidebar-navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li><a ui-sref="basicData">Dane podstawowe</a></li>
@@ -72,25 +81,16 @@
       <div class="col-sm-9">
           <div class="container">
             <p>Main content goes here</p>
-            <div id="result"><p>Tutaj kurwa!</p></div>
+            <div class="card"> 
+         </div>
           </div>
       </div>
     </div>
   </script>
 
-  <script> 
-    $( "#result" ).load( "C:\Users\Katarzyna Kónikowska\Desktop\5 semestr\TAS\MOCKUP\basicData.html", function() {
-    alert( "Load was performed." );
-    });
-    </script> 
+ <!--    Templates-->
   <script type="text/ng-template" id="basicData.html">
-<!--
-    <div ng-bind-html="testOutterHtml">
         <h1>The Homey Page</h1>
-    </div>
--->
-        <h1>The Homey Page</h1>
-        <div id="test"></div>
     </script>
 
   <script type="text/ng-template" id="warehouse.html">
@@ -102,6 +102,6 @@
     <a ui-sref="basicData">Basic Data</a>
   </script>
 </div>
-</body>
+    </body>
 
 </html>

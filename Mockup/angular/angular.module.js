@@ -34,3 +34,13 @@ App.config(function($stateProvider, $urlRouterProvider) {
     });
   $urlRouterProvider.otherwise('/basicData');
 });
+
+app.directive('appInfo', function() { 
+  return { 
+    restrict: 'E', 
+    scope: { 
+      info: '=' 
+    }, 
+    templateUrl: 'basicData.html' 
+  }; 
+});
