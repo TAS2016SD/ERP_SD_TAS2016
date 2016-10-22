@@ -1,0 +1,39 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="angular/angular.module.js"></script>
+
+<div ng-app="app">
+  <div ui-view name="nav"></div>
+
+  <div class="container">
+    <div ui-view name="content"></div>
+  </div>
+
+  <script type="text/ng-template" id="navbar.html">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="landingpage">LandingPage</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="about">About</a></li>
+        <li ng-hide="signedIn()"><a href="/login">Log In</a></li>
+        <li ng-show="signedIn()"><a ng-click="logout()">Log Out</a></li>
+      </ul>
+    </nav>
+  </script>
+
+  <script type="text/ng-template" id="home.html">
+    <h1>The Homey Page</h1>
+  </script>
+
+  <script type="text/ng-template" id="about.html">
+    <h1>The About Page</h1>
+  </script>
+
+  <script type="text/ng-template" id="landingpage.html">
+    <h1>Landing Page</h1>
+    <a ui-sref="home">Home</a>
+  </script>
+</div>

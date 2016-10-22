@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<title>Minimum Bootstrap HTML Skeleton</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="angular/angular.module.js"></script>
+</head>
+
+<body>
+
+<div ng-app="app">
+  <div ui-view name="nav"></div>
+
+  <div class="container">
+    <div ui-view name="content"></div>
+  </div>
+
+  <script type="text/ng-template" id="navbar.html">
+<!--
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="landingpage">LandingPage</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="about">About</a></li>
+        <li ng-hide="signedIn()"><a href="/login">Log In</a></li>
+        <li ng-show="signedIn()"><a ng-click="logout()">Log Out</a></li>
+      </ul>
+    </nav>
+-->
+  <div class="row">
+      <div class="col-sm-3">
+        <div class="sidebar-nav">
+          <div class="navbar navbar-default" role="navigation">
+    <!--
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <span class="visible-xs navbar-brand">Sidebar menu</span>
+            </div>
+    -->
+               <div class="navbar-header">
+                    <a class="navbar-brand" ui-sref="landingpage">LandingPage</a>
+                </div>
+                <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a ui-sref="basicData">Dane podstawowe</a></li>
+                    <li><a ui-sref="warehouse">Magazyn</a></li>
+                    <li><a href="#">Faktury</a></li>
+                    <li><a href="#">Zarządzaj</a></li>
+                    <li><a href="#">Użytkownik</a></li>
+                    <li><a href="#">Ustawienia</a></li>
+                  </ul>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9">
+          <div class="container">
+            <p>Main content goes here</p>
+            <div id="result"><p>Tutaj kurwa!</p></div>
+          </div>
+      </div>
+    </div>
+  </script>
+
+  <script> 
+    $( "#result" ).load( "C:\Users\Katarzyna Kónikowska\Desktop\5 semestr\TAS\MOCKUP\basicData.html", function() {
+    alert( "Load was performed." );
+    });
+    </script> 
+  <script type="text/ng-template" id="basicData.html">
+<!--
+    <div ng-bind-html="testOutterHtml">
+        <h1>The Homey Page</h1>
+    </div>
+-->
+        <h1>The Homey Page</h1>
+        <div id="test"></div>
+    </script>
+
+  <script type="text/ng-template" id="warehouse.html">
+    <h1>Magazyn</h1>
+  </script>
+
+  <script type="text/ng-template" id="landingpage.html">
+    <h1>Landing Page</h1>
+    <a ui-sref="basicData">Basic Data</a>
+  </script>
+</div>
+</body>
+
+</html>
