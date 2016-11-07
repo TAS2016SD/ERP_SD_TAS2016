@@ -1,107 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
-    <head>
-<!--	Meta-->
+<head>
 	<meta charset="utf-8">
-	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--	Links-->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/superhero/bootstrap.min.css" rel="stylesheet" />
-	
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+<!--   <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/yeti/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	<script src="app.js"></script>
+    <title>ANGULAR</title>
 
-	<title>Minimum Bootstrap HTML Skeleton</title>
-<!--     Scripts-->
-     
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-     
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-    
-    <script src="angular/angular.module.js"></script>
-    
 </head>
 
-    <body>
+<body>
 
-    <div ng-app="app">
-  <div ui-view name="nav"></div>
-
-  <div class="container">
-    <div ui-view name="content">Container</div>
-  </div>
-
-  <script type="text/ng-template" id="navbar.html">
-<!--
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="landingpage">LandingPage</a>
+	<div class="container-fluid">
+        <div class="row col-md-3">
+            <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
       </div>
-      <ul class="nav navbar-nav">
-        <li><a ui-sref="home">Home</a></li>
-        <li><a ui-sref="about">About</a></li>
-        <li ng-hide="signedIn()"><a href="/login">Log In</a></li>
-        <li ng-show="signedIn()"><a ng-click="logout()">Log Out</a></li>
-      </ul>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav" ng-controller="NavController as nav">
+          <li ng-repeat="tab in nav.tabs"><a href="#/{{tab.name}}">{{tab.name}}</a></li>
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
     </nav>
--->
-  <div class="row">
-      <div class="col-sm-3">
-        <div class="sidebar-nav">
-          <div class="navbar navbar-default" role="navigation">
-    <!--
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <span class="visible-xs navbar-brand">Sidebar menu</span>
-            </div>
-    -->
-<!--
-               <div class="navbar-header">
-                    <a class="navbar-brand" ui-sref="landingpage">LandingPage</a><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/superhero/bootstrap.min.css" rel="stylesheet" />
-                </div>
--->
-                <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                  <ul class="nav navbar-nav">
-                    <li><a ui-sref="basicData">Dane podstawowe</a></li>
-                    <li><a ui-sref="warehouse">Magazyn</a></li>
-                    <li><a href="#">Faktury</a></li>
-                    <li><a href="#">Zarządzaj</a></li>
-                    <li><a href="#">Użytkownik</a></li>
-                    <li><a href="#">Ustawienia</a></li>
-                  </ul>
-                </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-9">
-          <div class="container">
-            <p>Main content goes here</p>
-            <div class="card"> 
-         </div>
-          </div>
-      </div>
-    </div>
-  </script>
-
- <!--    Templates-->
-  <script type="text/ng-template" id="basicData.html">
-        <h1>The Homey Page</h1>
-    </script>
-
-  <script type="text/ng-template" id="warehouse.html">
-    <h1>Magazyn</h1>
-  </script>
-
-  <script type="text/ng-template" id="landingpage.html">
-    <h1>Landing Page</h1>
-    <a ui-sref="basicData">Basic Data</a>
-  </script>
-</div>
-    </body>
+        </div><!--end of navbar-->
+    
+        <div class="mainContent col-md-6 ng-view">
+            <p>Container.class</p>
+            <p>{{"hello"}}</p>
+            </div><!--end of main content box-->
+    </div><!--end of conteiner-fluid-->
+</body>
 
 </html>
