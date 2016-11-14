@@ -1,4 +1,3 @@
-/*
 @media (min-width: 768px) {
   .row.navbar-collapse {
     height: auto;
@@ -18,7 +17,6 @@
     overflow-x: visible;
   }
 }
-*/
 .navbar
 {
 	max-width:300px;

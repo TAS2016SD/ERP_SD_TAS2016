@@ -36,9 +36,9 @@
     app.controller('NavController', function(){ this.tabs = navTabs; });
     
     var navTabs = [
-        { name: 'Maindatas'},
+        { name: 'Main Data'},
         { name: 'Warehouse'}, 
-        { name: 'Jobs'}, 
+        { name: 'Orders'}, 
         { name: 'Invoices'}, 
         { name: 'Manage'}, 
         { name: 'User'}, 
@@ -46,14 +46,14 @@
     
     app.config(function($routeProvider) {
     $routeProvider
-    .when("/Maindatas", {
+    .when("/Main Data", {
         templateUrl : "mainData.html"
     })
     .when("/Warehouse", {
         templateUrl : "warehouse.html"
     })
-    .when("/Jobs", {
-        templateUrl : "jobs.html"
+    .when("/Orders", {
+        templateUrl : "orders.html"
     })
     .when("/Invoices", {
         templateUrl : "invoices.html"
