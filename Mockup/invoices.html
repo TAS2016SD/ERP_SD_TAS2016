@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
-    <script src="/controllers/invoices.controller.js"></script>
+<!--    <script src="/controllers/invoiceController.js"></script>-->
 
 	<title>Minimum Bootstrap HTML Skeleton</title>
 
@@ -21,11 +21,13 @@
 
 	<div class="container">
         <h1>INVOICES</h1>
-        <div>
-           <ul ng-controller="InvoiceController as invoice">
-                <li ng-repeat="field in invoice.fields">                {{field.name}}
-                </li>
-            </ul>
+           <div ng-controller="InvoiceController as invoiceCtrl">
+                <div ng-repeat="invoice in invoiceCtrl.invoices">
+                    <h1>{{invoice.id}}</h1>
+                    <h6>{{invoice.platnik}}</h6>
+                    <h6>{{invoice.wystawiajacy}}</h6>
+                    <h6>{{invoice.dataWystawienia | date}}</h6>
+                </div>
         </div>
 	</div>
 

@@ -1,37 +1,5 @@
-//console.log('app.js file is loaded');
-
-
-//var app = angular.module('app',[]);
-//
-//app.controller = ('NavController', function(){
-// this.name = nav;
-//});
-//
-//var navTab = 
-//    {
-//        name: ['Main datas', 'Warehouse', 'Jobs', 'Invoices', 'Manage', 'User', 'Settings']
-//    }
-//
-
-////(function(){
-//var app = angular.module('app', [ ]);
-//app.controller('NavController', function($scope){ 
-//$scope.navTabs = [
-//    { name: 'Main datas'},
-//    { name: 'Warehouse'}, 
-//    { name: 'Jobs'}, 
-//    { name: 'Invoices'}, 
-//    { name: 'Manage'}, 
-//    { name: 'User'}, 
-//    { name: 'Settings'}
-//]
-//});
-////})();
-
-
 (function()
  {
-    var app = angular.module('app', ["ngRoute"]);
     
     app.controller('NavController', function(){ this.tabs = navTabs; });
     
