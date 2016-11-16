@@ -4,10 +4,12 @@
     app.controller('NavController', function(){ this.tabs = navTabs; });
     
     var navTabs = [
-        { name: 'Main Data'},
+        { name: 'Main Data',
+            subName: ['Klienci','Dostawcy','Materiały']},
         { name: 'Warehouse'}, 
         { name: 'Orders'}, 
-        { name: 'Invoices'}, 
+        { name: 'Invoices',
+            subName: ['Dodaj']}, 
         { name: 'Manage'}, 
         { name: 'User'}, 
         { name: 'Settings'}];
@@ -16,6 +18,9 @@
     $routeProvider
     .when("/Main Data", {
         templateUrl : "mainData.html"
+    })
+    .when("/Main Data/Klienci", {
+        templateUrl : "mainDataKlient.html"
     })
     .when("/Warehouse", {
         templateUrl : "warehouse.html"

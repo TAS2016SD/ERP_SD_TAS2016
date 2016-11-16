@@ -13,6 +13,7 @@
 	<script src="./modules/mainModule.js"></script>
     <script src="./controllers/navController.js"></script>
     <script src="./controllers/invoiceController.js"></script>
+    <script src="./scripts/dropdownNav.js"></script>
     <title>ANGULAR</title>
 
 </head>
@@ -22,26 +23,34 @@
 	<div class="container-fluid">
         <div class="row col-md-3">
             <nav class="navbar navbar-default" role="navigation">
-          <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Wodzirex!</a>
+              </div>
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav" ng-controller="NavController as nav">
 <!--
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+                  <li ng-repeat="tab in nav.tabs"><a href="#/{{tab.name}}">{{tab.name}}</a>
+                  <a href="#/{{tab.subName}}">*{{tab.subName}}</a>
+                  </li>
 -->
-        </button>
-        <a class="navbar-brand" href="#">Wodzirex!</a>
-      </div>
+                  <li ng-repeat="tab in nav.tabs" role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" id="dropdownParent" data-toggle="dropdown" href="#/{{tab.name}}" role="button" aria-haspopup="true" aria-expanded="false">
+                     {{tab.name}}<span class="caret"></span>
+                    </a>
+                    <ul class="nav navbar-nav dropdown-menu">
+                        <li ng-repeat="subName in tab.subName track by $index" role="presentation"><a href="#{{tab.name}}/{{subName}}">{{subName}}<br></a></li>
+                    </ul>
+                    </li>
+                  </ul>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav" ng-controller="NavController as nav">
-          <li ng-repeat="tab in nav.tabs"><a href="#/{{tab.name}}">{{tab.name}}</a></li>
-        </ul>
-
-      </div><!-- /.navbar-collapse -->
-    </nav>
+            </div> <!--//.navbar-collapse-->
+            </nav>
         </div><!--end of navbar-->
     
         <div class="mainContent col-md-6 ng-view">

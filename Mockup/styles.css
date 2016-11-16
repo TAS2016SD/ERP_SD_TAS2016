@@ -39,3 +39,17 @@
 {
     margin-right: 0;
 }
+#dropdownParent
+{
+    /* background: red;test
+    padding-bottom: 20px;
+    position: absolute; */
+}
+span.caret
+{
+/*
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid;
+*/
+}
