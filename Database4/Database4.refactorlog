@@ -84,4 +84,46 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Nazwa_dostawcy" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="21c524d9-94fe-454f-a677-56a6607ca943" ChangeDateTime="11/15/2016 23:23:23">
+    <Property Name="ElementName" Value="[dbo].[Faktury_referencje].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Faktury_referencje]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Faktura" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="905b6ce2-3dea-49e3-be42-080c1245ac6c" ChangeDateTime="11/15/2016 23:24:16">
+    <Property Name="ElementName" Value="[dbo].[Faktury_referencje].[Faktura]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Faktury_referencje]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_Faktury" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="182e92b0-802b-436a-8af4-7aab890bc06e" ChangeDateTime="11/15/2016 23:35:36">
+    <Property Name="ElementName" Value="[dbo].[Dokumenty_przyjecia].[Materiał ]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dokumenty_przyjecia]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Dostawca" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a425be4f-12a2-47d8-a9a6-189c7efd6c4f" ChangeDateTime="11/15/2016 23:38:52">
+    <Property Name="ElementName" Value="[dbo].[Dokumenty_przyjęcia_pozycje].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dokumenty_przyjęcia_pozycje]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_dokumentu" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d133dab6-0dec-4ee1-994c-17ae5852928a" ChangeDateTime="11/15/2016 23:39:14">
+    <Property Name="ElementName" Value="[dbo].[Dokumenty_przyjęcia_pozycje].[Id_Materiału]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dokumenty_przyjęcia_pozycje]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_material" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="61084171-0fb1-4617-8341-dac1e7fe719f" ChangeDateTime="11/15/2016 23:39:24">
+    <Property Name="ElementName" Value="[dbo].[Dokumenty_przyjęcia_pozycje].[Id_material]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dokumenty_przyjęcia_pozycje]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_materialu" />
+  </Operation>
 </Operations>

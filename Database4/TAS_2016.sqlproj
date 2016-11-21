@@ -67,8 +67,11 @@
     <Build Include="Rabaty.sql" />
     <Build Include="RabatyKlient.sql" />
     <Build Include="Rabat_material.sql" />
-    <Build Include="Faktura_nagłówek.sql" />
+    <Build Include="Faktury_naglowki.sql" />
     <Build Include="Dostawcy.sql" />
+    <Build Include="Faktury_referencje.sql" />
+    <Build Include="Dokumenty_przyjecia_nagłowek.sql" />
+    <Build Include="Dokumenty_przyjęcia_pozycje.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database4.refactorlog" />
