@@ -17,28 +17,28 @@
     app.config(function($routeProvider) {
     $routeProvider
     .when("/Main Data", {
-        templateUrl : "mainData.html"
+        templateUrl : "../mainData.html"
     })
     .when("/Main Data/Klienci", {
-        templateUrl : "mainDataKlient.html"
+        templateUrl : "../mainDataKlient.html"
     })
     .when("/Warehouse", {
-        templateUrl : "warehouse.html"
+        templateUrl : "../warehouse.html"
     })
     .when("/Orders", {
-        templateUrl : "orders.html"
+        templateUrl : "../orders.html"
     })
     .when("/Invoices", {
-        templateUrl : "invoices.html"
+        templateUrl : "../invoices.html"
     })
     .when("/Manage", {
-        templateUrl : "manage.html"
+        templateUrl : "../manage.html"
     })
     .when("/User", {
-        templateUrl : "user.html"
+        templateUrl : "../user.html"
     })
     .when("/Settings",{
-        templateUrl : "settings.html"
+        templateUrl : "../settings.html"
     })
 });
     
