@@ -43,8 +43,8 @@
                        <input ng-model="invoice.dataWystawienia" class="form-control" type="text" id="inputDataWystawienia">
                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Dodaj</button>
-                <button type="submit" class="btn btn-primary">Zatwierdź</button>
+                <button onclick="buttonClick()" type="submit" class="btn btn-primary">Dodaj</button>
+                <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zatwierdź</button>
            </form>
            
    <div ng-controller="InvoiceController as invoiceCtrl">
@@ -57,7 +57,7 @@
    </tr>
     <tr ng-repeat="invoice in invoiceCtrl.invoices">
         <td>{{invoice.id}}</td>
-        <td>{{invoive.platnik}}</td> 
+        <td>{{invoice.platnik}}</td> 
         <td>{{invoice.wystawiajacy}}</td>
         <td>{{invoice.dataWystawienia}}</td>
     </tr>
@@ -69,7 +69,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<script>
-	</script>
+        function buttonClick() {
+            alert("Button clicked!");
+        }
+</script>
 
 </body>
 
