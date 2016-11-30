@@ -31,6 +31,9 @@
     .when("/Invoices", {
         templateUrl : "../invoices.html"
     })
+    .when("/Invoices/Dodaj", {
+        templateUrl : "../invoicesDodaj.html"
+    })
     .when("/Manage", {
         templateUrl : "../manage.html"
     })

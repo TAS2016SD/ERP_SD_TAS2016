@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Minimum Bootstrap HTML Skeleton</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+        <h1>INVOICE/DODAJ</h1>
+     <form name="invoiceInputForm" ng-controller="InvoiceController">
+                <div class="form-group row">
+                  <label for="inputId">Id:</label>
+                   <div class="col-md-12">
+                       <input ng-model="invoice.id" class="form-control" type="text" id="inputId">
+                   </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPlatnik">Płatnik:</label>
+                   <div class="col-md-12">
+                       <input ng-model="invoice.platnik"class="form-control" type="text" id="inputPlatnik">
+                   </div>
+                </div>
+                  <div class="form-group row">
+                  <label for="inputWystawiajacy">Wystawiający:</label>
+                   <div class="col-md-12">
+                       <input ng-model="invoice.wystawiajacy" class="form-control" type="text" id="inputWystawiajacy">
+                   </div>
+                </div>
+                  <div class="form-group row">
+                  <label for="inputDataWystawienia">Data Wystawienia:</label>
+                   <div class="col-md-12">
+                       <input ng-model="invoice.dataWystawienia" class="form-control" type="text" id="inputDataWystawienia">
+                   </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Dodaj</button>
+                <button type="submit" class="btn btn-primary">Zatwierdź</button>
+           </form>
+           
+   <div ng-controller="InvoiceController as invoiceCtrl">
+   <table class="table">
+   <tr>
+       <th>ID: </th>
+       <th>Płatnik: </th>
+       <th>Wystawiający: </th>
+       <th>Data Wystawienia: </th>
+   </tr>
+    <tr ng-repeat="invoice in invoiceCtrl.invoices">
+        <td>{{invoice.id}}</td>
+        <td>{{invoive.platnik}}</td> 
+        <td>{{invoice.wystawiajacy}}</td>
+        <td>{{invoice.dataWystawienia}}</td>
+    </tr>
+    </table>
+        </div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+	</script>
+
+</body>
+
+</html>
