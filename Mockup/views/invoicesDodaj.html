@@ -15,65 +15,88 @@
 </head>
 
 <body>
+<!--   UWAGA: Labela wywalają się przy zmienie szerokości col'a-->
+	<div class="container" ng-controller="InvoiceController">
+        <h1>Dodaj nową fakturę: </h1>
+       <div class="row col-md-6">
+<!--        FORMULARZ-->
+         <form name="invoiceInputForm" class="form-horizontal">
+            <div class="form-group">
+              <label class = "col-md-12" for="inputId">Id:</label>
+               <div class="col-md-11">
+              <textarea ng-model="invoice.id" /*ng-submit="InvoiceController.invoice.addId(invoice)"*/ class="form-control" placeholder="Podaj ID faktury"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+              <label class = "col-md-12" for="inputPlatnik">Płatnik:</label>
+               <div class="col-md-11">
+                   <textarea ng-model="invoice.platnik"class="form-control" type="text" id="inputPlatnik" placeholder="Podaj płatnika faktury"></textarea>
+               </div>
+            </div>
 
-	<div class="container">
-        <h1>INVOICE/DODAJ</h1>
-     <form name="invoiceInputForm" ng-controller="InvoiceController">
-                <div class="form-group row">
-                  <label for="inputId">Id:</label>
-                   <div class="col-md-12">
-                       <input ng-model="invoice.id" class="form-control" type="text" id="inputId">
-                   </div>
+            <div class="form-group">
+                <label class = "col-md-12" for="inputWystawiajacy">Wystawiający:</label>
+                <div class="col-md-11">
+                   <textarea ng-model="invoice.wystawiajacy" class="form-control" type="text" id="inputWystawiajacy" placeholder="Podaj wystawiającego fakturę"></textarea>
                 </div>
-                <div class="form-group row">
-                  <label for="inputPlatnik">Płatnik:</label>
-                   <div class="col-md-12">
-                       <input ng-model="invoice.platnik"class="form-control" type="text" id="inputPlatnik">
-                   </div>
+            </div>
+            <div class="form-group">
+                <label class = "col-md-12" for="inputDataWystawienia">Data wystawienia:</label>
+                <div class="col-md-11">
+                   <textarea ng-model="invoice.dataWystawienia" class="form-control" type="text" id="inputDataWystawienia" placeholder="Podaj datę wystawienia faktury"></textarea>
                 </div>
-                  <div class="form-group row">
-                  <label for="inputWystawiajacy">Wystawiający:</label>
-                   <div class="col-md-12">
-                       <input ng-model="invoice.wystawiajacy" class="form-control" type="text" id="inputWystawiajacy">
-                   </div>
-                </div>
-                  <div class="form-group row">
-                  <label for="inputDataWystawienia">Data Wystawienia:</label>
-                   <div class="col-md-12">
-                       <input ng-model="invoice.dataWystawienia" class="form-control" type="text" id="inputDataWystawienia">
-                   </div>
-                </div>
-                <button onclick="buttonClick()" type="submit" class="btn btn-primary">Dodaj</button>
-                <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zatwierdź</button>
-           </form>
-           
-   <div ng-controller="InvoiceController as invoiceCtrl">
-   <table class="table">
-   <tr>
-       <th>ID: </th>
-       <th>Płatnik: </th>
-       <th>Wystawiający: </th>
-       <th>Data Wystawienia: </th>
-   </tr>
-    <tr ng-repeat="invoice in invoiceCtrl.invoices">
-        <td>{{invoice.id}}</td>
-        <td>{{invoice.platnik}}</td> 
-        <td>{{invoice.wystawiajacy}}</td>
-        <td>{{invoice.dataWystawienia}}</td>
-    </tr>
-    </table>
+            </div>
+       </form>
+       </div>
+<!--       PANEL--> 
+<!--     UWAGA: Wyzerować left i right-paddding-->
+      <div class="row col-md-5">
+          <br>
+       <div class="panel panel-primary col-md-12">
+              <div class="panel-heading">
+                  <h3 class="panel-title">Dane faktury numer {{invoice.id}}</h3>
+              </div>
+               <div class="panel-body">
+                   <h5>Id: <strong>{{invoice.id}}</strong></h5>
+                    <h5>Nazwa płatnika: <strong>{{invoice.platnik}}</strong></h5>
+                    <h5>Nazwa wystawiającego: <strong>{{invoice.wystawiajacy}}</strong></h5>
+                    <h5>Data wystawieia: <strong>{{invoice.dataWystawienia}}</strong></h5>
+               </div>
+               <div class="panel-footer text-center">
+                   <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zapisz</button>
+               </div>
+            </div>
+    </div>
+<!--
+           TABELA    
+       <div class="row col-md-12">
+           <table class="table">
+           <tr>
+               <th>ID: </th>
+               <th>Płatnik: </th>
+               <th>Wystawiający: </th>
+               <th>Data Wystawienia: </th>
+           </tr>
+            <tr ng-repeat="invoice in invoices">
+                <td>{{invoice.id}}</td>
+                <td>{{invoice.platnik}}</td> 
+                <td>{{invoice.wystawiajacy}}</td>
+                <td>{{invoice.dataWystawienia}}</td>
+            </tr>
+            </table>
         </div>
 	</div>
-
+-->
+<!--SKRYPTY-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<script>
+//        UWAGA: ZMIENIĆ NA DIALOGS
         function buttonClick() {
-            alert("Button clicked!");
+            alert("Faktura została utworzona!");
         }
-</script>
+    </script>
 
 </body>
-
 </html>

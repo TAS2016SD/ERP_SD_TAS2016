@@ -19,16 +19,27 @@
 
 <body>
 
-	<div class="container">
+	<div class="container" ng-controller="InvoiceController as invoiceCtrl">
         <h1>INVOICES</h1>
-           <div ng-controller="InvoiceController as invoiceCtrl">
-                <div ng-repeat="invoice in invoiceCtrl.invoices">
-                    <h1>{{invoice.id}}</h1>
-                    <h6>{{invoice.platnik}}</h6>
-                    <h6>{{invoice.wystawiajacy}}</h6>
-                    <h6>{{invoice.dataWystawienia | date}}</h6>
-                </div>
+        <!--       TABELA    -->
+       <div class="row col-md-12">
+           <table class="table">
+           <tr>
+               <th>ID: </th>
+               <th>Płatnik: </th>
+               <th>Wystawiający: </th>
+               <th>Data Wystawienia: </th>
+           </tr>
+            <tr ng-repeat="invoice in invoices">
+                <td>{{invoice.id}}</td>
+                <td>{{invoice.platnik}}</td> 
+                <td>{{invoice.wystawiajacy}}</td>
+                <td>{{invoice.dataWystawienia}}</td>
+            </tr>
+            </table>
         </div>
+	</div>
+
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

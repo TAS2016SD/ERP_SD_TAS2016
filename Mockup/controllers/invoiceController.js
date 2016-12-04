@@ -1,7 +1,13 @@
 (function()
  {
     app.controller('InvoiceController', function(){ 
-        this.invoices = invoices});
+        this.invoices /* = invoices*/ = {};
+        
+        this.addId = function(invoices)
+        {
+            invoices.invoices.push(this.invoice);
+        }
+    });
     
     var invoices = [
         {
@@ -14,5 +20,6 @@
             platnik: "Paweł2 Kukiz" , 
             wystawiajacy: "Jarosław2 Kaczyński", 
             dataWystawienia:"22.09.15"}];
-
+            
+        
 })();
