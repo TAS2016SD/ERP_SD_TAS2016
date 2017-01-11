@@ -31,9 +31,9 @@
         android:layout_above="@+id/haslo_editText"
         android:layout_marginBottom="78dp"
         android:layout_centerHorizontal="true"
-        android:hint="@string/login_editText1"
+        android:hint="@string/login"
         android:textSize="4mm"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black" />
 
 
     <EditText
@@ -45,12 +45,11 @@
         android:layout_centerVertical="true"
         android:layout_marginEnd="45dp"
         android:layout_centerHorizontal="true"
-        android:hint="@string/haslo_editText1"
+        android:hint="@string/haslo"
         android:textSize="4mm"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black" />
 
     <Button
-        android:text="@string/zaloguj_button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/zaloguj_button"
@@ -58,10 +57,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
         android:background="@color/colorPrimaryDark"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:text="@string/zaloguj" />
 
     <TextView
-        android:text="@string/wyl_info1"
+        android:text="@string/wyl_inf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/zaloguj_button"

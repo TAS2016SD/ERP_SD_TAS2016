@@ -1,33 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.v7.widget.Toolbar
+    xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:theme="?attr/actionBarTheme"
-        android:minHeight="?attr/actionBarSize"
-        android:id="@+id/toolbar">
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:id="@+id/menu" />
-        </android.support.v7.widget.Toolbar>
-
-
-    <Button
-        android:text="Wyloguj"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/wyloguj_button"
-        android:hint="Cos"/>
+        android:layout_height="match_parent"
+        android:layout_weight="0.08">
 
     <TextView
         android:text="TextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/witaj_textView" />
-</LinearLayout>
+        android:id="@+id/witaj_textView"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_weight="0.08"
+        android:textSize="3mm"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/stan_mag"
+        android:id="@+id/stan_button"
+        android:layout_width="40mm"
+        android:layout_height="14mm"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="80dp"
+        android:textSize="4mm"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/witaj_textView"
+        android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:text="@string/kompletuj"
+        android:layout_width="40mm"
+        android:layout_height="14mm"
+        android:id="@+id/kompletuj_button"
+        android:textSize="4mm"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:layout_alignTop="@+id/stan_button"
+        android:layout_alignStart="@+id/stan_button"
+        android:layout_marginTop="140dp" />
+
+    <Button
+        android:text="@string/wyloguj"
+        android:layout_width="40mm"
+        android:layout_height="14mm"
+
+        android:id="@+id/wyloguj_button"
+        android:textSize="4mm"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:elevation="0dp"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/kompletuj_button"
+        android:layout_alignStart="@+id/kompletuj_button" />
+
+</RelativeLayout>

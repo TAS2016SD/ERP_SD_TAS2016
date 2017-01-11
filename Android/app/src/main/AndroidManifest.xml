@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.uzytkownik.techonologieaplikacjiserwerowych" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,6 +23,19 @@
         </activity>
         <activity
             android:name=".Zalogowany"
+            android:label="Technologie Aplikacji Serwerowych"
+            android:launchMode="singleInstance">
+
+        </activity>
+
+        <activity
+            android:name=".Kompletuj_zamowienie"
+            android:label="Technologie Aplikacji Serwerowych"
+            android:launchMode="singleInstance">
+        </activity>
+
+        <activity
+            android:name=".Stan_magazynu"
             android:label="Technologie Aplikacji Serwerowych"
             android:launchMode="singleInstance">
 

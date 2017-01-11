@@ -1,18 +1,13 @@
 <resources>
     <string name="app_name">Techonologie Aplikacji Serwerowych</string>
-    <string name="zaloguj_button1">Zaloguj</string>
-    <string name="login_editText1">Login</string>
-    <string name="haslo_editText1">Hasło</string>
-    <string name="wyl_info1">Wylogowano</string>
-    <string name="login_naglowek1">LOGOWANIE</string>
-    <string-array name="menu">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-    </string-array>
+    <string name="zaloguj">Zaloguj</string>
+    <string name="login">Login</string>
+    <string name="haslo">Hasło</string>
+    <string name="wyl_inf">Wylogowano</string>
+    <string name="wyloguj">Wyloguj</string>
+    <string name="login_nagl">LOGOWANIE</string>
+    <string name="stan_mag">Stan magazynu</string>
+    <string name="kompletuj">Kompletuj zamówienie</string>
+    <string name="wroc">Wróć</string>
+    <string name="wroc2">Wróć</string>
 </resources>

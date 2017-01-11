@@ -15,6 +15,7 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
 
@@ -28,6 +29,7 @@ public class Login extends AppCompatActivity {
                     Intent intent = new Intent(Login.this, Zalogowany.class);
                     intent.putExtra(NAME, name.getText().toString());
                     startActivity(intent);
+                    finish();
                 }
             });
         }
