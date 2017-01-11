@@ -3,22 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
 namespace TAS2016.Models
 {
-    public class Material
+    public class Invoice_header
     {
         [Required]
         [Key]
         int Id { get; set; }
         [Required]
-        string Name { get; set; }
+        Client Client { get; set; }
         [Required]
-        Decimal BasePrice { get; set; }
-        string  PriceUnit { get; set; }
-        int    Lenght { get; set; }
-        int    Width { get; set; }
-        int    Height { get; set; }
-        int    Weight { get; set; }
+        Seller Seller { get; set; }
+        DateTime InvoiceDate { get; set; }
     }
 }
