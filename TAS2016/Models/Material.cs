@@ -14,7 +14,7 @@ namespace TAS2016.Models
         [Required]
         string Name { get; set; }
         [Required]
-        Decimal BasePrice { get; set; }
+        decimal BasePrice { get; set; }
         string  PriceUnit { get; set; }
         int    Lenght { get; set; }
         int    Width { get; set; }

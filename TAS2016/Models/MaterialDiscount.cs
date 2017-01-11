@@ -6,8 +6,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TAS2016.Models
 {
-    public class Seller
+    public class MaterialDiscount
     {
-        //
+        [Required]
+        [Key]
+        Material Material { get; set; }
+        [Required]
+        Discount Discount { get; set; }
     }
 }

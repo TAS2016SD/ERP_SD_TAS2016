@@ -6,18 +6,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TAS2016.Models
 {
-    public class Provider
+    public class Discount
     {
         [Required]
         [Key]
         int Id { get; set; }
         [Required]
-        string ProviderName { get; set; }
+        int Amount { get; set; }
         [Required]
-        string Adress { get; set; }
-        [EmailAddress]
-        string EmailAdress { get; set; }
-        [Phone]
-        string PhoneNumber { get; set; }
+        string Base { get; set; }
+        [Required]
+        DateTime StartDate { get; set; }
+        [Required]
+        DateTime EndDate { get; set; }
     }
 }
