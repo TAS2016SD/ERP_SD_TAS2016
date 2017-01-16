@@ -10,20 +10,20 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        string Name { get; set; }
+        public string Name { get; set; }
         [Required]
-        string Adress { get; set; }
+        public string Adress { get; set; }
         [EmailAddress]
-        string EmailAdress { get; set; }
+        public string EmailAdress { get; set; }
         [Phone]
-        string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         [Required]
         [MinLength(10)]
         [MaxLength(10)]
-        string NIP { get; set; }
+        public string NIP { get; set; }
         [Required]
-        byte VAT { get; set; }
+        public byte VAT { get; set; }
     }
 }

@@ -8,6 +8,15 @@ namespace TAS2016.Models
 {
     public class Seller
     {
-        //
+        [Required]
+        public int Id { get; set; }
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        public string Adress { get; set; }
+        [Required]
+        [MinLength(10)]
+        [MaxLength(10)]
+        public string NIP { get; set; }
     }
 }

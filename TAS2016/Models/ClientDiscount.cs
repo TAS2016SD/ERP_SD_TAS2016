@@ -10,8 +10,8 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        Client Client { get; set; }
+        public Client Client { get; set; }
         [Required]
-        Discount Discount { get; set; }
+        public Discount Discount { get; set; }
     }
 }

@@ -9,11 +9,11 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        Client Client { get; set; }
+        public Client Client { get; set; }
         [Required]
-        Seller Seller { get; set; }
-        DateTime InvoiceDate { get; set; }
+        public Seller Seller { get; set; }
+        public DateTime InvoiceDate { get; set; }
     }
 }

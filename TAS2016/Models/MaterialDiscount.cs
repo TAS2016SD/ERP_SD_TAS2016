@@ -10,8 +10,8 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        Material Material { get; set; }
+        public Material Material { get; set; }
         [Required]
-        Discount Discount { get; set; }
+        public Discount Discount { get; set; }
     }
 }

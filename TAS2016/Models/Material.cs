@@ -10,15 +10,15 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        string Name { get; set; }
+        public string Name { get; set; }
         [Required]
-        decimal BasePrice { get; set; }
-        string  PriceUnit { get; set; }
-        int    Lenght { get; set; }
-        int    Width { get; set; }
-        int    Height { get; set; }
-        int    Weight { get; set; }
+        public decimal BasePrice { get; set; }
+        public string PriceUnit { get; set; }
+        public int Lenght { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public int Weight { get; set; }
     }
 }

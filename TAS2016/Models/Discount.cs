@@ -10,14 +10,14 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        int Amount { get; set; }
+        public int Amount { get; set; }
         [Required]
-        string Base { get; set; }
+        public string Base { get; set; }
         [Required]
-        DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; }
         [Required]
-        DateTime EndDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

@@ -10,14 +10,14 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        string ProviderName { get; set; }
+        public string ProviderName { get; set; }
         [Required]
-        string Adress { get; set; }
+        public string Adress { get; set; }
         [EmailAddress]
-        string EmailAdress { get; set; }
+        public string EmailAdress { get; set; }
         [Phone]
-        string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

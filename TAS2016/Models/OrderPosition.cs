@@ -10,12 +10,12 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        Material Material { get; set; }
+        public Material Material { get; set; }
         [Required]
-        double Amount { get; set; }
+        public double Amount { get; set; }
         [Required]
-        decimal Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

@@ -10,20 +10,19 @@ namespace TAS2016.Models
     {
         [Required]
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        Client Client { get; set; }
-        //Czy nie powinno być osobnej tabeli i osobnego modelu Payers?
-        int PayerId { get; set; }
+        public Client Client { get; set; }
+        public Client Payer { get; set; }
         [Required]
-        Seller Seller { get; set; }
+        public Seller Seller { get; set; }
         [Required]
-        string Status { get; set; }
+        public string Status { get; set; }
         [Required]
-        decimal OrderPrice { get; set; }
+        public decimal OrderPrice { get; set; }
         [Required]
-        DateTime CreationDate { get; set; }
+        public DateTime CreationDate { get; set; }
         [Required]
-        string Creator { get; set; }
+        public string Creator { get; set; }
     }
 }

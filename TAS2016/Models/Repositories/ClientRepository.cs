@@ -25,12 +25,12 @@ namespace TAS2016.Models.Repositories
         {
             _dbContext.Clients.Remove(client);
         }
-
+  
         public Client get(int Id)
         {
-            return _dbContext.Clients.Where(b => b.Id == Id);
+            return null; //_dbContext.Clients.Where(b => b.Id == Id);
         }
-
+   
         public IEnumerable<Client> ListAll()
         {
             throw new NotImplementedException();
