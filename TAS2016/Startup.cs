@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using TAS2016.Data;
 using TAS2016.Models;
 using TAS2016.Services;
+using TAS2016.Interfaces;
+using TAS2016.Models.Repositories;
 
 namespace TAS2016
 {
@@ -55,6 +57,8 @@ namespace TAS2016
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<ClientRepository, ClientRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

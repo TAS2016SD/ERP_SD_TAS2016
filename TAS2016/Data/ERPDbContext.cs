@@ -16,7 +16,9 @@ namespace TAS2016.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Client>().ToTable("Clients");
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Client>();
+            modelBuilder.ForSqlServerUseIdentityColumns();
         }
 
 

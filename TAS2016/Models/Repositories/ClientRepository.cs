@@ -12,33 +12,35 @@ namespace TAS2016.Models.Repositories
 
         private readonly ERPDbContext _dbContext;
 
-        public ClientRepository(ERPDbContext _dbContext)
+        public ClientRepository(ERPDbContext dbContext)
         {
-            this._dbContext = _dbContext;
+            this._dbContext = dbContext;
         }
         public void Add(Client client)
         {
             _dbContext.Clients.Add(client);
-                }
+            _dbContext.SaveChanges();
+           
+        }
 
         public void Delete(Client client)
         {
             _dbContext.Clients.Remove(client);
         }
   
-        public Client get(int Id)
+        public Client Get(int Id)
         {
-            return null; //_dbContext.Clients.Where(b => b.Id == Id);
+          return _dbContext.Clients.Where(c => c.Id == Id).Single();
         }
    
         public IEnumerable<Client> ListAll()
         {
-            throw new NotImplementedException();
+            return _dbContext.Clients.ToList();
         }
 
         public void Update(Client client)
         {
-            throw new NotImplementedException();
+            _dbContext.Clients.Update(client);
         }
     }
 }

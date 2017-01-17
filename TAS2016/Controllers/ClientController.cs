@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using TAS2016.Data;
 using System.Collections;
 using TAS2016.Models;
+using TAS2016.Models.Repositories;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,37 +15,43 @@ namespace TAS2016.Controllers
     
     public class ClientController : Controller
     {   
-        private readonly ERPDbContext _context;
+        private readonly ClientRepository _repository;
 
-            ClientController(ERPDbContext _context)
+        public ClientController(ClientRepository _repository)
         {
-            this._context = _context;
+            this._repository = _repository;
         }
 
-        // GET: api/values
+        // GET: /Client/getAll
         [HttpGet]
-        public IEnumerable<Client> Get()
+        public IEnumerable<Client> GetAll()
         {
-           return _context.Clients.AsEnumerable<Client>();
+            
+         return _repository.ListAll();
+
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET client/2
+        [Route("client/{id}")]
+        public Client Id(int id)
         {
-            return "value";
+
+
+            return _repository.Get(id);
         }
 
-        // POST api/values
+       
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Client value)
         {
+            _repository.Add(value);
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public void Put([FromBody]Client value)
         {
+            _repository.Add(value);
         }
 
         // DELETE api/values/5
