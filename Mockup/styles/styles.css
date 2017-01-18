@@ -58,3 +58,8 @@ span.caret
 {
     padding-top: 10%;
 }
+form div textarea.form-control
+{
+/*    background: red;*/
+    height: 40px;
+}

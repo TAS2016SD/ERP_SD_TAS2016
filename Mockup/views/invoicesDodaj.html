@@ -5,21 +5,26 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dodaj nową fakturę.</title>
+<!--	<script src=../factories/invoiceFactory.js></script>-->
 </head>
 
 <body>
 	<div class="container col-md-9" ng-controller="InvoiceController">
-      <div class="row">
+      <div class="row invoiceHeader">
+      <p>INVOICE'S HEADER</p>
        <div class="col-md-7">
            <h1>Dodaj nową fakturę: </h1>
 <!--        FORMULARZ-->
             <form name="invoiceInputForm" class="form-horizontal">
+<!--
                 <div class="form-group">
                   <label class = "col-md-12" for="inputId">Id:</label>
                    <div class="col-md-11">
                   <textarea ng-model="invoice.id" /*ng-submit="InvoiceController.invoice.addId(invoice)"*/ class="form-control" placeholder="Podaj ID faktury"></textarea>
+                       <pre id="default-spacing">MY WELCOME TEST: {{myWelcome | json : 4}}</pre>
                     </div>
                 </div>
+-->
                 <div class="form-group">
                   <label class = "col-md-12" for="inputPlatnik">Płatnik:</label>
                    <div class="col-md-11">
@@ -46,10 +51,10 @@
       <h1><br></h1><br>
        <div class="panel panel-primary">
               <div class="panel-heading">
-                  <h3 class="panel-title">Dane faktury numer {{invoice.id}}</h3>
+                  <h3 class="panel-title">Nagłówek faktury.</h3>
               </div>
                <div class="panel-body">
-                   <h5>Id: <strong>{{invoice.id}}</strong></h5>
+<!--                   <h5>Id: <strong>{{invoice.id}}</strong></h5>-->
                     <h5>Nazwa płatnika: <strong>{{invoice.platnik}}</strong></h5>
                     <h5>Nazwa wystawiającego: <strong>{{invoice.wystawiajacy}}</strong></h5>
                     <h5>Data wystawieia: <strong>{{invoice.dataWystawienia}}</strong></h5>
@@ -60,6 +65,57 @@
         </div>
     </div>
 	</div>
+   <div class="row invoiceBody">
+         <p>INVOICE'S BODY</p>
+         <table class="table table-livePrieview">
+            <tr>
+                <th>Lp</th>
+                <th>Nazwa</th>
+                <th>Ilość</th>
+                <th>Jm</th>
+                <th>Cena netto</th>
+                <th>Wartość netto</th>
+                <th>Stawka VAT</th>
+                <th>Kwota VAT</th>
+                <th>Wartość brutto</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td><h5>{{invoice.nazwa}}</h5></td>
+                <td><h5>{{invoice.ilosc}}</h5></td>
+                <td><h5>{{invoice.jm}}</h5></td>
+                <td><h5>{{invoice.cenaNetto}}</h5></td>
+                <td><h5>{{invoice.wartoscNetto}}</h5></td>
+                <td><h5>{{invoice.stawkaVAT}}</h5></td>
+                <td><h5>{{invoice.kwotaVAT}}</h5></td>
+                <td><h5>{{invoice.wartoscBrutto}}</h5></td>
+            </tr>
+            </table>
+         <table class="table">
+            <tr>
+                <th>Lp</th>
+                <th>Nazwa</th>
+                <th>Ilość</th>
+                <th>Jm</th>
+                <th>Cena netto</th>
+                <th>Wartość netto</th>
+                <th>Stawka VAT</th>
+                <th>Kwota VAT</th>
+                <th>Wartość brutto</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td><textarea ng-model="invoice.nazwa"class="form-control" type="text" id="inputNazwa"></textarea></td>
+                <td><textarea ng-model="invoice.ilosc"class="form-control" type="text" id="inputIlosc"></textarea></td>
+                <td><textarea ng-model="invoice.jm"class="form-control" type="text" id="inputJm"></textarea></td>
+                <td><textarea ng-model="invoice.cenaNetto"class="form-control" type="text" id="inputCenaNetto"></textarea></td>
+                <td><textarea ng-model="invoice.wartoscNetto"class="form-control" type="text" id="inputWartoscNetto"></textarea></td>
+                <td><textarea ng-model="invoice.stawkaVAT"class="form-control" type="text" id="inputStawkaWat"></textarea></td>
+                <td><textarea ng-model="invoice.kwotaVAT"class="form-control" type="text" id="inputKwotaVAT"></textarea></td>
+                <td><textarea ng-model="invoice.wartoscBrutto"class="form-control" type="text" id="inputWartoscBrutto"></textarea></td>
+            </tr>
+            </table>
+     </div>
     </div>
 <!--SKRYPTY-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

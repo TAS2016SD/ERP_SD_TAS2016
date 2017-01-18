@@ -7,12 +7,14 @@
         { name: 'Main Data',
             subName: ['Klienci','Dostawcy','Materiały']},
         { name: 'Warehouse'}, 
-        { name: 'Orders'}, 
+        { name: 'Orders',
+            subName: ['Dodaj']}, 
         { name: 'Invoices',
             subName: ['Dodaj']}, 
         { name: 'Manage'}, 
         { name: 'User'}, 
-        { name: 'Settings'}];
+//        { name: 'Settings'}
+    ];
     
     app.config(function($routeProvider) {
     $routeProvider
@@ -28,6 +30,9 @@
     .when("/Orders", {
         templateUrl : "../orders.html"
     })
+    .when("/Orders/Dodaj", {
+        templateUrl : "../ordersDodaj.html"
+    })
     .when("/Invoices", {
         templateUrl : "../invoices.html"
     })
@@ -40,9 +45,9 @@
     .when("/User", {
         templateUrl : "../user.html"
     })
-    .when("/Settings",{
-        templateUrl : "../settings.html"
-    })
+//    .when("/Settings",{
+//        templateUrl : "../settings.html"
+//    })
 });
     
     
