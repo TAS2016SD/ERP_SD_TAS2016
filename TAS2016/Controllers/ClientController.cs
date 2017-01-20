@@ -7,12 +7,13 @@ using TAS2016.Data;
 using System.Collections;
 using TAS2016.Models;
 using TAS2016.Models.Repositories;
-
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TAS2016.Controllers
 {
-    
+    [Authorize]
     public class ClientController : Controller
     {   
         private readonly ClientRepository _repository;
@@ -23,7 +24,8 @@ namespace TAS2016.Controllers
         }
 
         // GET: /Client/getAll
-        [HttpGet]
+       
+        [Route("client")]
         public IEnumerable<Client> GetAll()
         {
             
@@ -42,22 +44,27 @@ namespace TAS2016.Controllers
 
        
         [HttpPost]
-        public void Post([FromBody]Client value)
+        [Route("client")]
+        public void Post([FromBody] Client value)
         {
             _repository.Add(value);
         }
 
-        // PUT api/values/5
+        // PUT api/values/5s
         [HttpPut]
-        public void Put([FromBody]Client value)
+        [Route("client/{id}")]
+        public void Put(int id,[FromBody]Client value)
         {
-            _repository.Add(value);
+            value.Id = id;
+            _repository.Update(value);
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("client/{id}")]
         public void Delete(int id)
         {
+            _repository.Delete(id);
         }
     }
 }

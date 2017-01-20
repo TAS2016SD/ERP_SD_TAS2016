@@ -23,9 +23,11 @@ namespace TAS2016.Models.Repositories
            
         }
 
-        public void Delete(Client client)
+        public void Delete(int id)
         {
-            _dbContext.Clients.Remove(client);
+            Client ClientToDelete = _dbContext.Clients.Where(c => c.Id == id).Single();
+            _dbContext.Clients.Remove(ClientToDelete);
+            _dbContext.SaveChanges();
         }
   
         public Client Get(int Id)

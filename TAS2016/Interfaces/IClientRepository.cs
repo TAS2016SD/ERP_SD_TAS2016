@@ -10,7 +10,7 @@ namespace TAS2016.Interfaces
         IEnumerable<Client> ListAll();
         void Add(Client client);
         void Update(Client client);
-        void Delete(Client client);
+        void Delete(int Id);
         Client Get(int Id);
     }
 }
