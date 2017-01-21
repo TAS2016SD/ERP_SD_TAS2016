@@ -51,7 +51,8 @@ namespace TAS2016.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
-      
+        [Route("Account/Login")]
+
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;

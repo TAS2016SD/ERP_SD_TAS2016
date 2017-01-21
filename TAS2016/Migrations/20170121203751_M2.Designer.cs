@@ -8,9 +8,10 @@ using TAS2016.Data;
 namespace TAS2016.Migrations
 {
     [DbContext(typeof(ERPDbContext))]
-    partial class ERPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170121203751_M2")]
+    partial class M2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
@@ -74,20 +75,9 @@ namespace TAS2016.Migrations
 
                     b.Property<double>("Amount");
 
-                    b.Property<int?>("MaterialId");
-
                     b.HasKey("StoragePlace");
 
-                    b.HasIndex("MaterialId");
-
                     b.ToTable("WarehouseStatus");
-                });
-
-            modelBuilder.Entity("TAS2016.Models.WarehouseStatus", b =>
-                {
-                    b.HasOne("TAS2016.Models.Material", "Material")
-                        .WithMany()
-                        .HasForeignKey("MaterialId");
                 });
         }
     }

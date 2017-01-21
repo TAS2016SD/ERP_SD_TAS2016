@@ -43,6 +43,7 @@ namespace TAS2016.Models.Repositories
         public void Update(Client client)
         {
             _dbContext.Clients.Update(client);
+            _dbContext.SaveChanges();
         }
     }
 }

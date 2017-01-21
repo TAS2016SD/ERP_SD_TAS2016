@@ -11,7 +11,7 @@ namespace TAS2016.Models
         [Required]
         [Key]
         public string StoragePlace { get; set; }
-        Material Material { get; set; }
+        public Material Material { get; set; }
         public double Amount { get; set; }
     }
 }

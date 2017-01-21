@@ -59,6 +59,7 @@ namespace TAS2016
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<ClientRepository, ClientRepository>();
+            services.AddScoped<MaterialRepository, MaterialRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
