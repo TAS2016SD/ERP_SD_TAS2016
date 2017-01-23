@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tlo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="8mm"
+        android:id="@+id/Login_naglowek"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"/>
+
+
+    <TextView
+        android:text="@string/wyl_inf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zaloguj_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:id="@+id/wyl_info"
+        android:visibility="invisible"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/haslo_editText"
+        android:hint="@string/haslo"
+        android:textSize="4mm"
+        android:textColor="@android:color/black"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/login_editText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zaloguj_button"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:text="@string/zaloguj"
+        android:layout_below="@+id/haslo_editText"
+        android:layout_alignStart="@+id/wyl_info"
+        android:layout_marginTop="17dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/login_editText"
+        android:hint="@string/login"
+        android:textSize="4mm"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
+
+
+</RelativeLayout>

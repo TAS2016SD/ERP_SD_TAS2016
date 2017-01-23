@@ -10,4 +10,10 @@
     <string name="kompletuj">Kompletuj zamówienie</string>
     <string name="wroc">Wróć</string>
     <string name="wroc2">Wróć</string>
+    <string name="wylogowanie_title">Wylogowanie</string>
+    <string name="wylogowanie_info">Wylogować?</string>
+    <string name="toast_wylogowano">Wylogowano</string>
+    <string name="toast_zalogowano">Zalogowano</string>
+    <string name="brak">Brak połączenia</string>
+    <string name="polaczono">Polaczono</string>
 </resources>

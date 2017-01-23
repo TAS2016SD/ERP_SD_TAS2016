@@ -1,6 +1,7 @@
 package com.example.uzytkownik.techonologieaplikacjiserwerowych;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 public class Stan_magazynu extends Activity{
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -35,5 +37,9 @@ public class Stan_magazynu extends Activity{
                 finish();
             }
         });
+
+        //Context context = null;
+        
+        //NetworkProvider network = new NetworkProvider(context);
     }
 }

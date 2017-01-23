@@ -9,8 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/tlo"
     tools:context="com.example.uzytkownik.techonologieaplikacjiserwerowych.Login">
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,7 +19,8 @@
         android:layout_centerHorizontal="true"
         android:textSize="8mm"
         android:id="@+id/Login_naglowek"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"/>
 
 
     <EditText
@@ -69,5 +70,14 @@
         android:layout_marginTop="47dp"
         android:id="@+id/wyl_info"
         android:visibility="invisible"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Login_naglowek"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:id="@+id/result" />
 
 </RelativeLayout>
