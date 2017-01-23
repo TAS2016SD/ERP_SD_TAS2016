@@ -25,7 +25,7 @@ public class Login extends Activity{
     public static final String NAME = "name";
     public static final String LOGOUT = "logout";
     public static final int LOG = 1;
-    private static final String USERS_URL = "http://tas2016.azurewebsites.net/mobile/login";
+    private static final String USERS_URL = "http://tas2016.azurewebsites.net/mobile/LogOff";
     private static final String TAG = Login.class.getSimpleName();
 
 
@@ -55,7 +55,7 @@ public class Login extends Activity{
                         public void run() {
                             try {
                                 String result = new NetworkRequest(USERS_URL, HttpMethod.POST,
-                                nameET.getText().toString(), passwordET.getText().toString()).execute();
+                                String.valueOf(nameET.getText()), String.valueOf(passwordET.getText())).execute();
                                 Log.v(TAG, " result " + result);
                                 showSuccessNetworkToast();
                             } catch (IOException e) {

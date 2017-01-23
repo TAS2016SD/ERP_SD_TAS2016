@@ -49,7 +49,7 @@ public class NetworkRequest {
             }
 */
             conn.connect();
-            //is = conn.getInputStream();
+            is = conn.getInputStream();
 
             return readStream(is);
         } finally {

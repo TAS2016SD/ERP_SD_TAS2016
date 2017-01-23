@@ -26,27 +26,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="56" column="83" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
+            <state relative-caret-position="34">
+              <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
               <folding>
-                <element signature="e#1753#2646#0" expanded="true" />
-                <element signature="e#2645#2646#0" expanded="true" />
+                <element signature="e#1754#2657#0" expanded="true" />
+                <element signature="e#2656#2657#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkProvider.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NetworkProvider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/NetworkProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-              <folding>
-                <marker date="1485190895029" expanded="false" signature="1626:1658" ph="&quot;Brak połączenia&quot;" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="21" column="85" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="85" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,8 +52,8 @@
       <file leaf-file-name="NetworkRequest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/NetworkRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="296">
+              <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -1729,9 +1727,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/NetworkRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/NetworkProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/Login.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/NetworkRequest.java" />
       </list>
     </option>
   </component>
@@ -2081,31 +2079,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/Login.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/NetworkProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="56" column="83" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
-          <folding>
-            <element signature="e#1753#2646#0" expanded="true" />
-            <element signature="e#2645#2646#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="21" column="85" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/NetworkRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="296">
+          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/NetworkProvider.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/uzytkownik/techonologieaplikacjiserwerowych/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+        <state relative-caret-position="34">
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
           <folding>
-            <marker date="1485190895029" expanded="false" signature="1626:1658" ph="&quot;Brak połączenia&quot;" />
+            <element signature="e#1754#2657#0" expanded="true" />
+            <element signature="e#2656#2657#0" expanded="true" />
           </folding>
         </state>
       </provider>
