@@ -4,19 +4,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dodaj nową fakturę.</title>
-<!--	<script src=../factories/invoiceFactory.js></script>-->
+	<title>Dodaj nową fakturę</title>
 </head>
 
 <body>
 	<div class="container col-md-9" ng-controller="InvoiceController">
       <div class="row invoiceHeader">
-      <p>INVOICE'S HEADER</p>
+<!--      <p>INVOICE'S HEADER</p>-->
        <div class="col-md-7">
+           
            <h1>Dodaj nową fakturę: </h1>
+           
 <!--        FORMULARZ-->
             <form name="invoiceInputForm" class="form-horizontal">
-<!--
+<!--CZYTANIE Z JSON
                 <div class="form-group">
                   <label class = "col-md-12" for="inputId">Id:</label>
                    <div class="col-md-11">
@@ -38,6 +39,7 @@
                        <textarea ng-model="invoice.wystawiajacy" class="form-control" type="text" id="inputWystawiajacy" placeholder="Podaj wystawiającego fakturę"></textarea>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <label class = "col-md-12" for="inputDataWystawienia">Data wystawienia:</label>
                     <div class="col-md-11">
@@ -46,27 +48,29 @@
                 </div>
            </form>
        </div>
+       
 <!--       PANEL--> 
       <div class="col-md-5">
-      <h1><br></h1><br>
-       <div class="panel panel-primary">
-              <div class="panel-heading">
-                  <h3 class="panel-title">Nagłówek faktury.</h3>
-              </div>
-               <div class="panel-body">
-<!--                   <h5>Id: <strong>{{invoice.id}}</strong></h5>-->
-                    <h5>Nazwa płatnika: <strong>{{invoice.platnik}}</strong></h5>
-                    <h5>Nazwa wystawiającego: <strong>{{invoice.wystawiajacy}}</strong></h5>
-                    <h5>Data wystawieia: <strong>{{invoice.dataWystawienia}}</strong></h5>
-               </div>
-               <div class="panel-footer text-center">
-                   <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zapisz</button>
-               </div>
+          <h1><br></h1><br>
+           <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Nagłówek faktury</h3>
+                  </div>
+                   <div class="panel-body">
+    <!--                   <h5>Id: <strong>{{invoice.id}}</strong></h5>-->
+                        <h5>Nazwa płatnika: <strong>{{invoice.platnik}}</strong></h5>
+                        <h5>Nazwa wystawiającego: <strong>{{invoice.wystawiajacy}}</strong></h5>
+                        <h5>Data wystawieia: <strong>{{invoice.dataWystawienia}}</strong></h5>
+                   </div>
+                   <div class="panel-footer text-center">
+                       <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zapisz</button>
+                   </div>
+            </div>
         </div>
-    </div>
 	</div>
-   <div class="row invoiceBody">
-         <p>INVOICE'S BODY</p>
+
+        <div class="row invoiceBody">
+<!--         <p>INVOICE'S BODY</p>-->
          <table class="table table-livePrieview">
             <tr>
                 <th>Lp</th>
@@ -90,7 +94,8 @@
                 <td><h5>{{invoice.kwotaVAT}}</h5></td>
                 <td><h5>{{invoice.wartoscBrutto}}</h5></td>
             </tr>
-            </table>
+        </table>
+            
          <table class="table">
             <tr>
                 <th>Lp</th>
@@ -117,6 +122,7 @@
             </table>
      </div>
     </div>
+    
 <!--SKRYPTY-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
