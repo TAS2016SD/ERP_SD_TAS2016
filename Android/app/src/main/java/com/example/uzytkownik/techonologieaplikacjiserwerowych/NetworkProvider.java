@@ -19,7 +19,7 @@ import java.util.List;
 
 public class NetworkProvider {
 
-   private static final String RECIPES_URL = "http://tas2016.azurewebsites.net/client";
+   private static final String RECIPES_URL = "http://tas2016.azurewebsites.net/mobile/client";
 
     private final Context context;
 
@@ -27,12 +27,12 @@ public class NetworkProvider {
 
     private String name;
 
-    private String login = "domi.rut@onet.pl";
-    private String password = "Misiulka95.";
+    private String login = "mateusz.dajerling@gmail.com";
+    private String password = "###########";
 
-    public interface OnLoginDownloadedListener {
-        void onLoginDownloaded();
-    }
+   // public interface OnLoginDownloadedListener {
+    //    void onLoginDownloaded();
+    //}
 
     public NetworkProvider(Context context) {
         this.context = context;
@@ -40,7 +40,7 @@ public class NetworkProvider {
 
 
 
-    public void getUsers(OnLoginDownloadedListener listener) throws IOException, JSONException{
+   /* public void getUsers(OnLoginDownloadedListener listener) throws IOException, JSONException{
         if(isOnline())
         {
             String s = downloadUsers();
@@ -67,7 +67,7 @@ public class NetworkProvider {
     private String downloadUsers() throws IOException {
         return new NetworkRequest(RECIPES_URL, HttpMethod.POST, login, password).execute();
     }
-
+*/
 
     ////////SPRAWDZENIE DOSTEPNOSCI POLACZENIA///////////////////////
     public boolean isOnline() {
