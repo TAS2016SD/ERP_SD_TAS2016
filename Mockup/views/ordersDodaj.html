@@ -11,94 +11,58 @@
 
     <div class="container col-md-9" ng-controller="OrderController as order">
         <div class="col-md-7">
-        <h1>Dodaj zamównienie.</h1>
+        <h1>Dodaj zamównienie</h1>
         <!--        <p>{{test}}</p>-->
             <form name="orderInputForm" class="form-horizontal" >
                
-                <div class="form-group" ng-repeat="header in headers">
-                    <label class = "col-md-12" for="inputStatus">{{header}}</label>
+                <div class="form-group" ng-repeat="header in headers" ng-init="modelNames">
+                    <label class = "col-md-12" for="input{{modelNames[$index]}}">{{header}}</label>
                     <div class="col-md-11">
-                        <textarea ng-repeat="modelName in modelNames" ng-model="order.{{modelNames}}" class="form-control" type="text" id="input"></textarea>
-                    </div>
-                </div>
-                
-<!--
-                <table class="table table-livePrieview">
-            <tr>
-                <th ng-repeat="header in headers">{{header}}</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td ng-repeat="modelName in modelNames">
-                
-               <h5>{{order.{{modelName}}}}</h5></td>
-            </tr>
-        </table>
--->
-            </form>
-                  
-<!--
-                  <div class="form-group">
-                    <label class = "col-md-12" for="inputStatus">Id wystawcy</label>
-                    <div class="col-md-11">
-                        <textarea ng-model="order.idWystawcy" class="form-control" type="text" id="inputIdWystawcy" placeholder="Podaj id wystawcy"></textarea>
-                    </div>
-                </div>
-                   
-                   <div class="form-group">
-                    <label class = "col-md-12" for="inputStatus">Status</label>
-                    <div class="col-md-11">
-                        <textarea ng-model="order.status" class="form-control" type="text" id="inputStatus" placeholder="Podaj status zamównienia"></textarea>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class = "col-md-12" for="inputStatus">Wartość zlecenia</label>
-                    <div class="col-md-11">
-                        <textarea ng-model="order.wartoscZlecenia" class="form-control" type="text" id="inputWartoscZlecenia" placeholder="Podaj wartość zlecenia"></textarea>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class = "col-md-12" for="inputStatus">Data utworzenia</label>
-                    <div class="col-md-11">
-                        <textarea ng-model="order.dataUtworzenia" class="form-control" type="text" id="inputDataUtworzenia" placeholder="Podaj datę utworzenia"></textarea>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class = "col-md-12" for="inputStatus">Tworzący</label>
-                    <div class="col-md-11">
-                        <textarea ng-model="order.tworzacy" class="form-control" type="text" id="inputTworzacy" placeholder="Podaj status zamównienia"></textarea>
+                        <textarea ng-model="order.modelNames[$index]" class="form-control" type="text" id="input{{modelNames[$index]}}"></textarea>
                     </div>
                 </div>
             </form>
         </div>
-        PANEL
         <div class="col-md-5">
-          <h1><br></h1><br>
-           <div class="panel panel-primary">
-                  <div class="panel-heading">
-                      <h3 class="panel-title">Nagłówek zlecnia</h3>
+            <h1><br></h1><br>
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                      <h3 class="panel-title">Nagłówek zamówienia</h3>
                   </div>
-                   <div class="panel-body">
-
-                        <h5>Nazwa płatnika: <strong>{{invoice.platnik}}</strong></h5>
-                        <h5>Nazwa wystawiającego: <strong>{{invoice.wystawiajacy}}</strong></h5>
-                        <h5>Data wystawieia: <strong>{{invoice.dataWystawienia}}</strong></h5>
-                   </div>
-                   <div class="panel-footer text-center">
-                       <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zapisz</button>
-                   </div>
+                  <div class="panel-body">
+                      <h5 ng-repeat="header in headers">{{header}}:<strong>{{order.modelNames[$index]}}</strong></h5>
+                  </div>
+                </div>
             </div>
--->
-        </div>
+                <div class="row orderBody" ng-init="modelNamesForBodies">
+                   <table class="table table-livePrieview">
+                    <tr>
+                        <th ng-repeat="body in bodies">{{body}}</th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="body in bodies">
+                            <h5>{{order.modelNamesForBodies[$index]}}</h5>
+                        </td>
+                    </tr>
+                </table>
+                
+                <table class="table">
+                    <tr>
+                    <th ng-repeat="body in bodies">{{body}}</th>
+                    </tr>
+                    
+                    <tr>
+                        <td ng-repeat="body in bodies">
+                            <textarea ng-model="order.modelNamesForBodies[$index]"class="form-control" type="text" id="input{{modelNamesForBodies[$index]}}">
+                            </textarea>
+                        </td>
+                    </tr>
 
-        
-        
-    </div>
-	
-	
+                </table>
+        </div>
+                
+        </div>
+<!--        //koniec containera-->
 	
 	
 	

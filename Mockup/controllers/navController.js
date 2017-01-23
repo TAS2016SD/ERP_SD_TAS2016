@@ -6,13 +6,13 @@
     var navTabs = [
         { name: 'Main Data',
             subName: ['Klienci','Dostawcy','Materiały']},
-        { name: 'Warehouse'}, 
-        { name: 'Orders',
-            subName: ['Dodaj']}, 
-        { name: 'Invoices',
-            subName: ['Dodaj']}, 
-        { name: 'Manage'}, 
-        { name: 'User'}, 
+        { name: 'Magazyn'}, 
+        { name: 'Zlecenia',
+            subName: ['Dodaj zlecenie']}, 
+        { name: 'Faktury',
+            subName: ['Dodaj fakturę']}, 
+        { name: 'Rabaty'}, 
+        { name: 'Użytkownik'}, 
 //        { name: 'Settings'}
     ];
     
@@ -24,25 +24,25 @@
     .when("/Main Data/Klienci", {
         templateUrl : "../mainDataKlient.html"
     })
-    .when("/Warehouse", {
+    .when("/Magazyn", {
         templateUrl : "../warehouse.html"
     })
-    .when("/Orders", {
+    .when("/Zlecenia", {
         templateUrl : "../orders.html"
     })
-    .when("/Orders/Dodaj", {
+    .when("/Zlecenia/Dodaj zlecenie", {
         templateUrl : "../ordersDodaj.html"
     })
-    .when("/Invoices", {
+    .when("/Faktury", {
         templateUrl : "../invoices.html"
     })
-    .when("/Invoices/Dodaj", {
+    .when("/Faktury/Dodaj fakturę", {
         templateUrl : "../invoicesDodaj.html"
     })
-    .when("/Manage", {
+    .when("/Rabaty", {
         templateUrl : "../manage.html"
     })
-    .when("/User", {
+    .when("/Użytkownik", {
         templateUrl : "../user.html"
     })
 //    .when("/Settings",{
