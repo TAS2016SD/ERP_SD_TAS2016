@@ -1,9 +1,9 @@
 (function()
  {
     
-    app.controller('NavController', function(){ this.tabs = navTabs; });
+    app.controller('ManageController', function(){ this.tabs = navTabs; });
     
-     var navTabs = [
+    var navTabs = [
         { name: 'Main Data',
             subName: ['Klienci','Dostawcy','Materiały']},
         { name: 'Magazyn'}, 
@@ -42,15 +42,6 @@
     })
     .when("/Rabaty", {
         templateUrl : "../manage.html"
-    })
-    .when("/Rabaty/Rabat czasowy", {
-        templateUrl : "../discount.html"
-    })
-    .when("/Rabaty/Rabat na klienta", {
-        templateUrl : "../clientDiscount.html"
-    })
-    .when("/Rabaty/Rabat na materiał", {
-        templateUrl : "../materialDiscount.html"
     })
     .when("/Użytkownik", {
         templateUrl : "../user.html"
