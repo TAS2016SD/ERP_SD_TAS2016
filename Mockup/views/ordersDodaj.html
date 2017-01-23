@@ -32,6 +32,9 @@
                   <div class="panel-body">
                       <h5 ng-repeat="header in headers">{{header}}:<strong>{{order.modelNames[$index]}}</strong></h5>
                   </div>
+                  <div class="panel-footer text-center">
+                       <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zapisz</button>
+                   </div>
                 </div>
             </div>
                 <div class="row orderBody" ng-init="modelNamesForBodies">
