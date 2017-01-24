@@ -1,14 +1,9 @@
 package com.example.uzytkownik.techonologieaplikacjiserwerowych;
 
 import android.app.Activity;
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
 import android.os.StrictMode;
-import android.service.voice.VoiceInteractionSession;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +12,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Network;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Login extends Activity{
@@ -25,8 +33,9 @@ public class Login extends Activity{
     public static final String NAME = "name";
     public static final String LOGOUT = "logout";
     public static final int LOG = 1;
-    private static final String USERS_URL = "http://tas2016.azurewebsites.net/mobile/LogOff";
+    private static final String USERS_URL = "http://tas2016.azurewebsites.net/mobile/Login";
     private static final String TAG = Login.class.getSimpleName();
+    Context context;
 
 
     @Override
@@ -50,23 +59,42 @@ public class Login extends Activity{
 
                 @Override
                 public void onClick(View v) {
-                    runOnUiThread(new Runnable() {
+                    String url = "http://tas2016.azurewebsites.net/mobile/Login";
+                    //Network network;
+
+                    StringRequest postRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                         @Override
-                        public void run() {
+                        public void onResponse(String response) {
                             try {
-                                String result = new NetworkRequest(USERS_URL, HttpMethod.POST,
-                                String.valueOf(nameET.getText()), String.valueOf(passwordET.getText())).execute();
-                                Log.v(TAG, " result " + result);
-                                showSuccessNetworkToast();
-                            } catch (IOException e) {
-                                //TODO handle this exception properly
-                                Log.e(TAG, "IOException while sending rating", e);
-                                showErrorToast();
-                            } finally {
-                               // switchRateVa(view, rateVa);
+                                JSONObject jsonResponse = new JSONObject(response).getJSONObject("");
+                                String site = jsonResponse.getString("Email");
+                                        String network = jsonResponse.getString("Password");
+                                System.out.println("Site: " + site + "\nNetwork: " + network);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
                         }
-                        });
+                    },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+                        protected Map<String,String> getParams() {
+                            Map<String, String> params = new HashMap<>();
+                            {
+                                params.put("Content-Type","application/x-www-form-urlencoded");
+                                params.put("Email", "mateusz.dajerling@gmail.com");
+                                params.put("Password", "#############");
+                                return params;
+                            }
+                        }
+                    };
+                    odp(postRequest);
+                    //Volley.newRequestQueue(context).add(postRequest);
+                    //Volley.newRequestQueue(this).add(postRequest);
 
 
                    /* Intent intent = new Intent(Login.this, Zalogowany.class);
@@ -107,4 +135,8 @@ public class Login extends Activity{
     private void showErrorToast() {
         Toast.makeText(this, R.string.brak, Toast.LENGTH_SHORT).show();
 }
+    private void odp(StringRequest postRequest)
+    {
+        Volley.newRequestQueue(this).add(postRequest);
+    }
 }
