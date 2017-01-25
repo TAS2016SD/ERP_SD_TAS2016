@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj pozycję do magazynu: </title>
+</head>
+
+<body>
+
+    <div class="container col-md-9" ng-controller="WarehouseController as order">
+        <div class="col-md-7">
+        <h1>Dodaj pozycję do magazynu: </h1>
+        <!--        <p>{{test}}</p>-->
+            <form name="orderInputForm" class="form-horizontal" >
+               
+                <div class="form-group" ng-repeat="header in headers" ng-init="modelNames">
+                    <label class = "col-md-12" for="input{{modelNames[$index]}}">{{header}}</label>
+                    <div class="col-md-11">
+                        <textarea ng-model="order.modelNames[$index]" class="form-control" type="text" id="input{{modelNames[$index]}}"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-5">
+            <h1><br></h1><br>
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                      <h3 class="panel-title">Nagłówek zamówienia</h3>
+                  </div>
+                  <div class="panel-body">
+                      <h5 ng-repeat="header in headers">{{header}}:<strong>{{order.modelNames[$index]}}</strong></h5>
+                  </div>
+                  <div class="panel-footer text-center">
+                       <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zapisz</button>
+                   </div>
+                </div>
+            </div>
+                <div class="row orderBody" ng-init="modelNamesForBodies">
+                   <table class="table table-livePrieview">
+                    <tr>
+                        <th ng-repeat="body in bodies">{{body}}</th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="body in bodies">
+                            <h5>{{order.modelNamesForBodies[$index]}}</h5>
+                        </td>
+                    </tr>
+                </table>
+                
+                <table class="table">
+                    <tr>
+                    <th ng-repeat="body in bodies">{{body}}</th>
+                    </tr>
+                    
+                    <tr>
+                        <td ng-repeat="body in bodies">
+                            <textarea ng-model="order.modelNamesForBodies[$index]"class="form-control" type="text" id="input{{modelNamesForBodies[$index]}}">
+                            </textarea>
+                        </td>
+                    </tr>
+
+                </table>
+        </div>
+                
+        </div>
+<!--        //koniec containera-->
+	
+	
+	
+	
+<!--SKRYPTY-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>
