@@ -14,6 +14,7 @@ namespace TAS2016.Data
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Material> Materials { get; set; }
+        public DbSet<WarehouseStatus> WarehouseStatuses { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
