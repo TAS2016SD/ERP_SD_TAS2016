@@ -5,25 +5,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.StrictMode;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +33,6 @@ public class Login extends Activity{
     private static final String USERS_URL = "http://tas2016.azurewebsites.net/mobile/Login";
     private static final String TAG = Login.class.getSimpleName();
     Context context;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +57,32 @@ public class Login extends Activity{
                 public void onClick(View v) {
                     String url = "http://tas2016.azurewebsites.net/mobile/Login";
                     //Network network;
+                    final TextView result = (TextView) findViewById(R.id.result);
 
-                    StringRequest postRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    HashMap<String, String> params = new HashMap<String, String>();
+                    params.put("Content-Type", "application/json");
+
+                    JsonObjectRequest req = new JsonObjectRequest(url, new JSONObject(params),
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        VolleyLog.v("Response:%n %s", response.toString(4));
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            VolleyLog.e("Error: ", error.getMessage());
+                        }
+                    });
+                       /* final StringRequest postRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
+
                                 JSONObject jsonResponse = new JSONObject(response).getJSONObject("");
                                 String site = jsonResponse.getString("Email");
                                         String network = jsonResponse.getString("Password");
@@ -79,20 +96,20 @@ public class Login extends Activity{
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     error.printStackTrace();
-                                }
+                                   }
                             }
                     ) {
                         protected Map<String,String> getParams() {
                             Map<String, String> params = new HashMap<>();
                             {
-                                params.put("Content-Type","application/x-www-form-urlencoded");
-                                params.put("Email", "mateusz.dajerling@gmail.com");
-                                params.put("Password", "#############");
+                                params.put("Content-Type","application/json");
                                 return params;
                             }
                         }
-                    };
-                    odp(postRequest);
+                    };*/
+                    context= getApplicationContext();
+                    Volley.newRequestQueue(context).add(req);
+                    //odp(postRequest);
                     //Volley.newRequestQueue(context).add(postRequest);
                     //Volley.newRequestQueue(this).add(postRequest);
 
