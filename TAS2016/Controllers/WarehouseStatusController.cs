@@ -30,14 +30,14 @@ namespace TAS2016.Controllers
         }
 
         [HttpPost]
-        [Route("warehouse")]
+        [Route("warehousestatus")]
         public void Post([FromBody] WarehouseStatus warehouseStatus)
         {
             _repository.Add(warehouseStatus);
         }
 
         [HttpPut]
-        [Route("client/{id}")]
+        [Route("warehousestatus/{id}")]
         public void Put(string StoragePlace, [FromBody]WarehouseStatus warehouseStatus)
         {
             warehouseStatus.StoragePlace = StoragePlace;
@@ -45,7 +45,7 @@ namespace TAS2016.Controllers
         }
 
         [HttpDelete]
-        [Route("client/{id}")]
+        [Route("warehousestatus/{id}")]
         public void Delete(string StoragePlace)
         {
             _repository.Remove(StoragePlace);
