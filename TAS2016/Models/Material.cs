@@ -20,5 +20,7 @@ namespace TAS2016.Models
         public int Width { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
+
+        public int VatRate { get; set; }
     }
 }

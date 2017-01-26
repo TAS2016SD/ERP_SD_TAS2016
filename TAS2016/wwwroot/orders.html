@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyświetl zamówienia</title>
+</head>
+
+<body>
+
+    <div class="container col-md-9" ng-controller="OrderController as order">
+        <div class="col-md-7">
+        <h1>Wyświetl zamówienia</h1>
+        <!--        <p>{{test}}</p>-->
+            <div class="orderHeader">
+                <h5 ng-repeat="header in headersDisplay">{{header}}</h5>
+            </div>
+        </div>
+                <div class="row orderBody" ng-init="modelNamesForBodies">
+                   <table class="table table-livePrieview">
+                    <tr>
+                        <th ng-repeat="body in bodiesDisplay">{{body}}</th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="body in bodiesDisplay">
+                            <h5>{{order.modelNamesForBodies[$index]}}</h5>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+                
+        </div>
+<!--        //koniec containera-->
+	
+	
+	
+	
+<!--SKRYPTY-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>

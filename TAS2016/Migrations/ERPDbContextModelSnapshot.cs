@@ -58,6 +58,8 @@ namespace TAS2016.Migrations
 
                     b.Property<string>("PriceUnit");
 
+                    b.Property<int>("VatRate");
+
                     b.Property<int>("Weight");
 
                     b.Property<int>("Width");

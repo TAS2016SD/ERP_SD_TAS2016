@@ -26,12 +26,21 @@ namespace TAS2016.Controllers
             _logger = loggerFactory.CreateLogger<HomeController>();
         }
 
-       
+
+        [Route("views/home")]
+        public IActionResult HomeView()
+        {
+            return View("Index");
+        }
+
+
+
+
         public IActionResult Index()
         {
-           
-            
-                return View();
+
+
+            return RedirectToAction("HomeView");
             
         }
 

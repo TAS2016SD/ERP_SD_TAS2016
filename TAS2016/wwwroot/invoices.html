@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
+<!--    <script src="/controllers/invoiceController.js"></script>-->
+<!--	<script src="../../modules/mainModule.js"></script>-->
+<!--    <script src="../../controllers/navController.js"></script>-->
+<!--    <script src="../../factories/invoiceFactory.js"></script>-->
+    <script src="../../controllers/invoiceController.js"></script>
+	<title>FAKTURY</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container" ng-controller="InvoiceController as invoiceCtrl">
+        <h1>FAKTURY</h1>
+        <div class="panel-default">
+            <h5>ID: </h5>
+            <h5>Płatnik:</h5>
+            <h5>Wystawiający:</h5>
+            <h5>Data Wystawienia:</h5>
+        </div>
+        <!--       TABELA    -->
+       <div class="row col-md-7">
+    <table class="table">
+            <tr>
+                <th>Lp</th>
+                <th>Nazwa</th>
+                <th>Ilość</th>
+                <th>Jm</th>
+                <th>Cena netto</th>
+                <th>Wartość netto</th>
+                <th>Stawka VAT</th>
+                <th>Kwota VAT</th>
+                <th>Wartość brutto</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td><h5>{{invoice.nazwa}}</h5></td>
+                <td><h5>{{invoice.ilosc}}</h5></td>
+                <td><h5>{{invoice.jm}}</h5></td>
+                <td><h5>{{invoice.cenaNetto}}</h5></td>
+                <td><h5>{{invoice.wartoscNetto}}</h5></td>
+                <td><h5>{{invoice.stawkaVAT}}</h5></td>
+                <td><h5>{{invoice.kwotaVAT}}</h5></td>
+                <td><h5>{{invoice.wartoscBrutto}}</h5></td>
+            </tr>
+            </table>
+        </div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+	</script>
+
+</body>
+
+</html>

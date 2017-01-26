@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -57,19 +58,23 @@ namespace TAS2016.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
-                    return new StatusCodeResult(200);
+                    return Ok("Login Sucess");
                 }
                
                 
                 else
                 {
-                    return new StatusCodeResult(400);
+                    Console.WriteLine(model.Email);
+                    Console.WriteLine(model.Password);
+                    return BadRequest("Login failed");
 
                 }
             }
 
             // If we got this far, something failed, redisplay form
-            return new StatusCodeResult(400);
+            
+            return  BadRequest("Login failed");
+
         }
 
 
@@ -84,7 +89,7 @@ namespace TAS2016.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation(4, "User logged out.");
-            return new StatusCodeResult(200);
+            return Ok("Logged out");
         }
 
 

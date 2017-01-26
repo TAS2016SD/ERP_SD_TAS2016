@@ -67,6 +67,7 @@ namespace TAS2016
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddAzureWebAppDiagnostics();
 
             if (env.IsDevelopment())
             {
