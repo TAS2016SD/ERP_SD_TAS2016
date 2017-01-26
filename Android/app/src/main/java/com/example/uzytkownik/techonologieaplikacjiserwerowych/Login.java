@@ -3,13 +3,19 @@ package com.example.uzytkownik.techonologieaplikacjiserwerowych;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.StrictMode;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Network;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -17,31 +23,39 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
-import java.util.Map;
-
 
 public class Login extends Activity{
 
     public static final String NAME = "name";
     public static final String LOGOUT = "logout";
     public static final int LOG = 1;
-    private static final String USERS_URL = "http://tas2016.azurewebsites.net/mobile/Login";
-    private static final String TAG = Login.class.getSimpleName();
-    Context context;
+    String url = "http://tas2016.azurewebsites.net/mobile/Login";
+    NetworkResponse errorRes;
+    String stringData = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_login);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-            final EditText nameET = (EditText) findViewById(R.id.login_editText);
-            final EditText passwordET = (EditText) findViewById(R.id.haslo_editText);
+        final EditText nameET = (EditText) findViewById(R.id.login_editText);
+        final EditText passwordET = (EditText) findViewById(R.id.haslo_editText);
+        final TextView result = (TextView) findViewById(R.id.result);
 
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -49,80 +63,96 @@ public class Login extends Activity{
 
 
         //PRZYCISK LOGOWANIA//////
-            final Button logIn = (Button) findViewById(R.id.zaloguj_button);
-            logIn.setOnClickListener(new View.OnClickListener() {
-            
+        final Button logIn = (Button) findViewById(R.id.zaloguj_button);
+        logIn.setOnClickListener(new View.OnClickListener() {
 
-                @Override
-                public void onClick(View v) {
-                    String url = "http://tas2016.azurewebsites.net/mobile/Login";
-                    //Network network;
-                    final TextView result = (TextView) findViewById(R.id.result);
 
-                    HashMap<String, String> params = new HashMap<String, String>();
-                    params.put("Content-Type", "application/json");
+            @Override
+            public void onClick(View v) {
 
-                    JsonObjectRequest req = new JsonObjectRequest(url, new JSONObject(params),
-                            new Response.Listener<JSONObject>() {
-                                @Override
-                                public void onResponse(JSONObject response) {
-                                    try {
-                                        VolleyLog.v("Response:%n %s", response.toString(4));
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            VolleyLog.e("Error: ", error.getMessage());
-                        }
-                    });
-                       /* final StringRequest postRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
+
+                final HashMap<String, String> params = new HashMap<String, String>();
+
+                params.put("Email", nameET.getText().toString());
+                params.put("Password", passwordET.getText().toString());
+
+                JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(params),
+                        new Response.Listener<JSONObject>() {
+
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                //Log.v("Response:%n %s", response.toString());
+                                //System.out.println("HEJ");
+                            }
+                        }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // VolleyLog.e("Error: ", error.getMessage());
+                        errorRes = error.networkResponse;
+                        if (errorRes != null && errorRes.data != null) {
                             try {
-
-                                JSONObject jsonResponse = new JSONObject(response).getJSONObject("");
-                                String site = jsonResponse.getString("Email");
-                                        String network = jsonResponse.getString("Password");
-                                System.out.println("Site: " + site + "\nNetwork: " + network);
-                            } catch (JSONException e) {
+                                stringData = new String(errorRes.data, "UTF-8");
+                            } catch (UnsupportedEncodingException e) {
                                 e.printStackTrace();
                             }
                         }
-                    },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    error.printStackTrace();
-                                   }
+                        else{
+                            Intent intent = new Intent(Login.this, Stan_magazynu.class);
+                            startActivity(intent);
+                        }
+                        Log.e("Error", stringData);
+                    }
+                });
+                odp(req);
+
+
+
+               /* StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                // Result handling
+                                System.out.println(response.substring(0,100));
                             }
-                    ) {
-                        protected Map<String,String> getParams() {
-                            Map<String, String> params = new HashMap<>();
-                            {
-                                params.put("Content-Type","application/json");
-                                return params;
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println("Something went wrong!");
+                        error.printStackTrace();
+                    }
+                });
+                odp2(stringRequest);*/
+
+
+               /* JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                (Request.Method.GET, url, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        result.setText("Response: " + response.toString());
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        errorRes = error.networkResponse;
+                        if (errorRes != null && errorRes.data != null) {
+                            try {
+                                stringData = new String(errorRes.data, "UTF-8");
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
                             }
                         }
-                    };*/
-                    context= getApplicationContext();
-                    Volley.newRequestQueue(context).add(req);
-                    //odp(postRequest);
-                    //Volley.newRequestQueue(context).add(postRequest);
-                    //Volley.newRequestQueue(this).add(postRequest);
-
-
-                   /* Intent intent = new Intent(Login.this, Zalogowany.class);
-                    intent.putExtra(NAME, nameET.getText().toString());
-                    setResult(RESULT_OK);
-                    startActivityForResult(intent, LOG);
-                    showSuccessToast();
-                    finish();*/
-                }
+                        Log.e("Error", stringData);
+                    }
+                });
+                odp(jsObjRequest);*/
+            }
         });
+
+
     }
+
+
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -152,7 +182,12 @@ public class Login extends Activity{
     private void showErrorToast() {
         Toast.makeText(this, R.string.brak, Toast.LENGTH_SHORT).show();
 }
-    private void odp(StringRequest postRequest)
+    private void odp(JsonObjectRequest postRequest)
+    {
+        Volley.newRequestQueue(this).add(postRequest);
+    }
+
+    private void odp2(StringRequest postRequest)
     {
         Volley.newRequestQueue(this).add(postRequest);
     }

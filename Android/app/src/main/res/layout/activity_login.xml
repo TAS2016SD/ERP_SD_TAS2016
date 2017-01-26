@@ -17,9 +17,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="8mm"
+        android:textSize="4mm"
         android:id="@+id/Login_naglowek"
         android:textColor="@android:color/black"
+        android:text="@string/login_nagl"
         android:textColorHint="@android:color/black"/>
 
 
@@ -75,9 +76,8 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Login_naglowek"
+        android:layout_alignTop="@+id/wyl_info"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
         android:id="@+id/result" />
 
 </RelativeLayout>

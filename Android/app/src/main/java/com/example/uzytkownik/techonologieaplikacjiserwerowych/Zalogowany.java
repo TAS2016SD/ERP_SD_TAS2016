@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,18 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 
 
 /**
@@ -21,6 +34,7 @@ import android.widget.Toast;
 public class Zalogowany extends Activity {
 
     public static String Name = "name1";
+    String url = "http://tas2016.azurewebsites.net/mobile/LogOff";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +83,41 @@ public class Zalogowany extends Activity {
 
             @Override
             public void onClick(View v) {
+
+                final HashMap<String, String> params = new HashMap<String, String>();
+
+                params.put("", "");
+
+
+                JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(params),
+                        new Response.Listener<JSONObject>() {
+
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                //Log.v("Response:%n %s", response.toString());
+                                //System.out.println("HEJ");
+                            }
+                        }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // VolleyLog.e("Error: ", error.getMessage());
+                        NetworkResponse errorRes;
+                        errorRes = error.networkResponse;
+                        String stringData = "";
+                        if (errorRes != null && errorRes.data != null) {
+                            try {
+                                stringData = new String(errorRes.data, "UTF-8");
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        Log.e("Error", stringData);
+
+                    }
+                });
+                odp(req);
+
                 showDialog();
             }
         });
@@ -113,4 +162,9 @@ public class Zalogowany extends Activity {
     }
     //////////////////////////////////////////////////////////
 
+
+    private void odp(JsonObjectRequest postRequest)
+    {
+        Volley.newRequestQueue(this).add(postRequest);
+    }
 }
