@@ -65,6 +65,9 @@
     .when("/Użytkownik", {
         templateUrl : "../user.html"
     })
+    .when("/Użytkownik/Edytuj", {
+        templateUrl : "../userEdytuj.html"
+    })
 //    .when("/Settings",{
 //        templateUrl : "../settings.html"
 //    })

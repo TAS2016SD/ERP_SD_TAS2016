@@ -11,19 +11,21 @@
 
 <body>
 
-	<div class="container col-md-9" ng-controller="UserController as user">
-        <h1>Użytkownik</h1>
-<!--        UWAGA: DO WYCENTROWANIA-->
+    <div class="container col-md-9" ng-controller="UserController as user">
+    <h1>Użytkownik</h1>
+    <!--        UWAGA: DO WYCENTROWANIA-->
         <div class="col-md-4">
-        <form name="userInputForm" class="form-horizontal" >
-               
-                <div class="form-group" ng-repeat="data in data" ng-init="modelNames">
-                    <label class = "col-md-12" for="input{{modelNames[$index]}}">{{data}}</label>
-                    <div class="col-md-11">
-                        <textarea ng-model="user.modelNames[$index]" class="form-control" type="text" id="input{{modelNames[$index]}}"></textarea>
-                    </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Dane użytkownika: </h3>
                 </div>
-            </form>
+                <div class="panel-body">
+                    <h5 ng-repeat="data in data">{{data}}: {{userData[$index]}}</h5>
+                </div>
+                <div class="panel-footer text-center">
+                   <a href="#/Użytkownik/Edytuj"class="btn btn-primary">Edytuj dane</a>
+                </div>
+            </div>
         </div>
     </div>
 
