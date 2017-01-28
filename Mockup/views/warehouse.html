@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
-
-	<title>Magazyn</title>
-
-	<!--  -->
-
-	<style>
-
-	</style>
-
+    <title>Wyświetl stan magazynu:</title>
 </head>
 
 <body>
 
-	<div class="container">
-        <h1>Magazyn</h1>
-	</div>
-
+    <div class="container col-md-9" ng-controller="WarehouseController as wh">
+        <div class="col-md-7">
+        <h1>Wyświetl stan magazynu: </h1>
+        <!--        <p>{{test}}</p>-->
+            
+        </div>
+                <div class="row warehouseBody" ng-init="modelNamesForBodies">
+                   <table class="table table-livePrieview">
+                    <tr>
+                        <th ng-repeat="body in bodiesDisplay">{{body}}</th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="body in bodiesDisplay">
+                            <h5>{{wh.modelNamesForBodies[$index]}}</h5>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+                
+        </div>
+<!--        //koniec containera-->
+	
+	
+	
+	
+<!--SKRYPTY-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-	<script>
-	</script>
-
 </body>
 
 </html>

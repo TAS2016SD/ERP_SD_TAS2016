@@ -4,14 +4,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dodaj zamówienie</title>
+    <title>Dodaj zlecenie</title>
 </head>
 
 <body>
 
     <div class="container col-md-9" ng-controller="OrderController as order">
         <div class="col-md-7">
-        <h1>Dodaj zamównienie</h1>
+        <h1>Dodaj zlecenie</h1>
         <!--        <p>{{test}}</p>-->
             <form name="orderInputForm" class="form-horizontal" >
                
@@ -27,7 +27,7 @@
             <h1><br></h1><br>
             <div class="panel panel-primary">
                <div class="panel-heading">
-                      <h3 class="panel-title">Nagłówek zamówienia</h3>
+                      <h3 class="panel-title">Nagłówek zlecenia: </h3>
                   </div>
                   <div class="panel-body">
                       <h5 ng-repeat="header in headers">{{header}}:<strong>{{order.modelNames[$index]}}</strong></h5>

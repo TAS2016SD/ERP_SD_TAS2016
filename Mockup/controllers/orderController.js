@@ -1,6 +1,6 @@
 app.controller('OrderController', function($scope)
 {
-    $scope.test = 'TEST CONTROLLERA ZAMÓWNIEŃ';
+    $scope.test = 'TEST CONTROLLERA ZLECEŃ';
     $scope.headers = ["Id odbiorcy", "Id wystawcy", "Data utworzenia", "Tworzący"];
     $scope.modelNames = ["IdOdbiorcy", "IdWystawcy", "DataUtworzenia", "Tworzacy"];
     $scope.bodies=["Materiał", "Cena"];
