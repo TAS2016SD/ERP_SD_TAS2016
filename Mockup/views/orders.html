@@ -4,20 +4,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wyświetl zamówienia</title>
+    <title>Wyświetl zlecenia</title>
 </head>
 
 <body>
 
     <div class="container col-md-9" ng-controller="OrderController as order">
         <div class="col-md-7">
-        <h1>Wyświetl zamówienia</h1>
+        <h1>Wyświetl zlecenia: </h1>
         <!--        <p>{{test}}</p>-->
             <div class="orderHeader">
                 <h5 ng-repeat="header in headersDisplay">{{header}}</h5>
             </div>
         </div>
-                <div class="row orderBody" ng-init="modelNamesForBodies">
+                <div class="orderBody" ng-init="modelNamesForBodies">
                    <table class="table table-livePrieview">
                     <tr>
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>

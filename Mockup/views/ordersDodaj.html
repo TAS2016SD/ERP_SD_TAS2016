@@ -11,7 +11,7 @@
 
     <div class="container col-md-9" ng-controller="OrderController as order">
         <div class="col-md-7">
-        <h1>Dodaj zlecenie</h1>
+        <h1>Dodaj zlecenie:</h1>
         <!--        <p>{{test}}</p>-->
             <form name="orderInputForm" class="form-horizontal" >
                
@@ -37,7 +37,7 @@
                    </div>
                 </div>
             </div>
-                <div class="row orderBody" ng-init="modelNamesForBodies">
+                <div class="orderBody" ng-init="modelNamesForBodies">
                    <table class="table table-livePrieview">
                     <tr>
                         <th ng-repeat="body in bodies">{{body}}</th>
