@@ -12,10 +12,27 @@
 
 <body>
 
-	<div class="container col-md-9">
-        <h1>Rabat czasowy</h1>
-    
-	</div>
+	<div class="container col-md-9" ng-controller="DiscountController as discount">
+        <div class="col-md-12">
+        <div class="row col-md-10">
+        <h1 class="pull-left">Rabat czasowy: </h1> <a href="#/Rabaty/Rabat czasowy/Nowy" class="btn btn-primary btn-md pull-right">Dodaj nowy</a>
+        </div>
+            
+        </div>
+                <div class="discountBody" ng-init="modelNamesForBodies">
+                   <table class="table table-livePrieview">
+                    <tr>
+                        <th ng-repeat="body in bodiesDisplay">{{body}}</th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="body in bodiesDisplay">
+                            <h5>{{discount.modelNamesForBodies[$index]}}</h5>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+                
+        </div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>

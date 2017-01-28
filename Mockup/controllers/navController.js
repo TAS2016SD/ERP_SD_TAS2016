@@ -56,11 +56,20 @@
     .when("/Rabaty/Rabat czasowy", {
         templateUrl : "../discount.html"
     })
+     .when("/Rabaty/Rabat czasowy/Nowy", {
+        templateUrl : "../discountDodaj.html"
+    })
     .when("/Rabaty/Rabat na klienta", {
         templateUrl : "../clientDiscount.html"
     })
+    .when("/Rabaty/Rabat na klienta/Nowy", {
+        templateUrl : "../clientDiscountDodaj.html"
+    })
     .when("/Rabaty/Rabat na materiał", {
         templateUrl : "../materialDiscount.html"
+    })
+    .when("/Rabaty/Rabat na materiał/Nowy", {
+        templateUrl : "../materialDiscountDodaj.html"
     })
     .when("/Użytkownik", {
         templateUrl : "../user.html"
@@ -68,9 +77,6 @@
     .when("/Użytkownik/Edytuj", {
         templateUrl : "../userEdytuj.html"
     })
-//    .when("/Settings",{
-//        templateUrl : "../settings.html"
-//    })
 });
     
     
