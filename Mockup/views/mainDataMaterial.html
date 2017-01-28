@@ -4,25 +4,25 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wyświetl dane klientów.</title>
+    <title>Wyświetl dane materiałów.</title>
 </head>
 
 <body>
 
-    <div class="container col-md-9" ng-controller="ClientController as client">
+    <div class="container col-md-9" ng-controller="MaterialController as material">
         <div class="col-md-7">
-        <h1>Wyświetl dane klientów: </h1>
+        <h1>Wyświetl dane materiałów: </h1>
                 <p>{{test}}</p>
             
         </div>
-                <div class="row warehouseBody" ng-init="modelNamesForBodies">
+                <div class="row materialBody" ng-init="modelNamesForBodies">
                    <table class="table table-livePrieview">
                     <tr>
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>
                     </tr>
                     <tr>
                         <td ng-repeat="body in bodiesDisplay">
-                            <h5>{{client.modelNamesForBodies[$index]}}</h5>
+                            <h5>{{material.modelNamesForBodies[$index]}}</h5>
                         </td>
                     </tr>
                 </table>

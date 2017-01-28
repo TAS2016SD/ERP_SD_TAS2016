@@ -26,6 +26,12 @@
     .when("/Dane podstawowe/Klienci", {
         templateUrl : "../mainDataKlient.html"
     })
+    .when("/Dane podstawowe/Dostawcy", {
+        templateUrl : "../mainDataDostawca.html"
+    })
+    .when("/Dane podstawowe/Materiały", {
+        templateUrl : "../mainDataMaterial.html"
+    })
     .when("/Magazyn", {
         templateUrl : "../warehouse.html"
     })

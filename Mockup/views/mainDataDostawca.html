@@ -9,20 +9,20 @@
 
 <body>
 
-    <div class="container col-md-9" ng-controller="ClientController as client">
+    <div class="container col-md-9" ng-controller="ProviderController as provider">
         <div class="col-md-7">
-        <h1>Wyświetl dane klientów: </h1>
+        <h1>Wyświetl dane dostawców: </h1>
                 <p>{{test}}</p>
             
         </div>
-                <div class="row warehouseBody" ng-init="modelNamesForBodies">
+                <div class="row providerBody" ng-init="modelNamesForBodies">
                    <table class="table table-livePrieview">
                     <tr>
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>
                     </tr>
                     <tr>
                         <td ng-repeat="body in bodiesDisplay">
-                            <h5>{{client.modelNamesForBodies[$index]}}</h5>
+                            <h5>{{provider.modelNamesForBodies[$index]}}</h5>
                         </td>
                     </tr>
                 </table>
