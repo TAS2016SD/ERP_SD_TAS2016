@@ -4,3 +4,4 @@
     [Id_materialu] INT NOT NULL, 
     [ilość] FLOAT NOT NULL, 
     [Cena ] MONEY NOT NULL, 
+)
