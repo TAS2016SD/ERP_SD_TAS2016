@@ -7,9 +7,10 @@ using System.ComponentModel.DataAnnotations;
 namespace TAS2016.Models
 {
     public class ClientDiscount
-    {
-        [Required]
+    {   [Required]
         [Key]
+        public int ClientId;
+        [Required]
         public Client Client { get; set; }
         [Required]
         public Discount Discount { get; set; }

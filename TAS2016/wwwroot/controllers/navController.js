@@ -4,9 +4,10 @@
     app.controller('NavController', function(){ this.tabs = navTabs; });
     
      var navTabs = [
-        { name: 'Main Data',
+        { name: 'Dane podstawowe',
             subName: ['Klienci','Dostawcy','Materiały']},
-        { name: 'Magazyn'}, 
+        { name: 'Magazyn',
+           subName: ['Dodaj pozycję']}, 
         { name: 'Zlecenia',
             subName: ['Dodaj zlecenie']}, 
         { name: 'Faktury',
@@ -19,14 +20,23 @@
     
     app.config(function($routeProvider) {
     $routeProvider
-    .when("/Main Data", {
+    .when("/Dane podstawowe", {
         templateUrl : "../mainData.html"
     })
-    .when("/Main Data/Klienci", {
+    .when("/Dane podstawowe/Klienci", {
         templateUrl : "../mainDataKlient.html"
+    })
+    .when("/Dane podstawowe/Dostawcy", {
+        templateUrl : "../mainDataDostawca.html"
+    })
+    .when("/Dane podstawowe/Materiały", {
+        templateUrl : "../mainDataMaterial.html"
     })
     .when("/Magazyn", {
         templateUrl : "../warehouse.html"
+    })
+    .when("/Magazyn/Dodaj pozycję", {
+        templateUrl : "../warehouseDodaj.html"
     })
     .when("/Zlecenia", {
         templateUrl : "../orders.html"
@@ -46,18 +56,27 @@
     .when("/Rabaty/Rabat czasowy", {
         templateUrl : "../discount.html"
     })
+     .when("/Rabaty/Rabat czasowy/Nowy", {
+        templateUrl : "../discountDodaj.html"
+    })
     .when("/Rabaty/Rabat na klienta", {
         templateUrl : "../clientDiscount.html"
+    })
+    .when("/Rabaty/Rabat na klienta/Nowy", {
+        templateUrl : "../clientDiscountDodaj.html"
     })
     .when("/Rabaty/Rabat na materiał", {
         templateUrl : "../materialDiscount.html"
     })
+    .when("/Rabaty/Rabat na materiał/Nowy", {
+        templateUrl : "../materialDiscountDodaj.html"
+    })
     .when("/Użytkownik", {
         templateUrl : "../user.html"
     })
-//    .when("/Settings",{
-//        templateUrl : "../settings.html"
-//    })
+    .when("/Użytkownik/Edytuj", {
+        templateUrl : "../userEdytuj.html"
+    })
 });
     
     

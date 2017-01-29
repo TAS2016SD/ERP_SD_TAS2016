@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj rabat czasowy: </title>
+</head>
+
+<body>
+
+    <div class="container col-md-9" ng-controller="DiscountController as discount">
+        <div class="col-md-7">
+        <h1>Dodaj rabat czasowy: </h1>
+                <div class="discountBody" ng-init="modelNamesForBodies">
+                   <table class="table table-livePrieview">
+                    <tr>
+                        <th ng-repeat="body in bodies">{{body}}</th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="body in bodies">
+                            <h5>{{discount.modelNamesForBodies[$index]}}</h5>
+                        </td>
+                    </tr>
+                </table>
+                
+                <table class="table">
+                    <tr>
+                    <th ng-repeat="body in bodies">{{body}}</th>
+                    </tr>
+                    
+                    <tr>
+                        <td ng-repeat="body in bodies">
+                            <textarea ng-model="discount.modelNamesForBodies[$index]"class="form-control" type="text" id="input{{modelNamesForBodies[$index]}}">
+                            </textarea>
+                        </td>
+                    </tr>
+
+                </table>
+        </div>
+                
+<button type="submit" class="btn btn-primary">Zapisz</button>        </div>
+    </div>
+<!--        //koniec containera-->
+	
+	
+	
+	
+<!--SKRYPTY-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>

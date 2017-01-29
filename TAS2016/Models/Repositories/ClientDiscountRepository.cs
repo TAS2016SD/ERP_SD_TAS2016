@@ -21,10 +21,10 @@ namespace TAS2016.Models.Repositories
             _dbContext.SaveChanges();
         }
 
-        public void Delete(Client Client)
+        public void Delete(int ClientId)
         {
             ClientDiscount cd = _dbContext.ClientDiscounts.
-                Where(c => c.Client == Client).Single();
+                Where(c => c.ClientId == ClientId).Single();
             _dbContext.ClientDiscounts.Remove(cd);
             _dbContext.SaveChanges();
         }
@@ -35,9 +35,9 @@ namespace TAS2016.Models.Repositories
             _dbContext.SaveChanges();
         }
 
-        public ClientDiscount Get(Client Client)
+        public ClientDiscount Get(int ClientId)
         {
-            return _dbContext.ClientDiscounts.Where(c => c.Client == Client).Single();
+            return _dbContext.ClientDiscounts.Where(c => c.ClientId == ClientId).Single();
         }
 
         public IEnumerable<ClientDiscount> GetAll()

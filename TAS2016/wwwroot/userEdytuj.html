@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Użytkownik</title>
+
+
+</head>
+
+<body>
+
+	<div class="container col-md-9" ng-controller="UserController as user">
+        <h1>Użytkownik</h1>
+<!--        UWAGA: DO WYCENTROWANIA-->
+        <div class="col-md-4">
+        <form name="userInputForm" class="form-horizontal" >
+                <div class="form-group" ng-repeat="data in data" ng-init="modelNames">
+                    <label class = "col-md-12" for="input{{modelNames[$index]}}">{{data}}</label>
+                    <div class="col-md-11">
+                        <textarea ng-model="user.modelNames[$index]" class="form-control" type="text" id="input{{modelNames[$index]}}"></textarea>
+                    </div>
+                </div>
+            </form>
+            <button onclick="buttonClick()" type="submit" class="btn btn-primary">Zapisz</button>
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

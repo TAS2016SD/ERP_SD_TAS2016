@@ -4,31 +4,43 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wyświetl stan magazynu:</title>
+    <title>Dodaj pozycję do magazynu: </title>
 </head>
 
 <body>
 
     <div class="container col-md-9" ng-controller="WarehouseController as wh">
         <div class="col-md-7">
-        <h1>Wyświetl stan magazynu: </h1>
-        <!--        <p>{{test}}</p>-->
-            
-        </div>
+        <h1>Dodaj pozycję do magazynu: </h1>
                 <div class="warehouseBody" ng-init="modelNamesForBodies">
                    <table class="table table-livePrieview">
                     <tr>
-                        <th ng-repeat="body in bodiesDisplay">{{body}}</th>
+                        <th ng-repeat="body in bodies">{{body}}</th>
                     </tr>
                     <tr>
-                        <td ng-repeat="body in bodiesDisplay">
+                        <td ng-repeat="body in bodies">
                             <h5>{{wh.modelNamesForBodies[$index]}}</h5>
                         </td>
                     </tr>
                 </table>
+                
+                <table class="table">
+                    <tr>
+                    <th ng-repeat="body in bodies">{{body}}</th>
+                    </tr>
+                    
+                    <tr>
+                        <td ng-repeat="body in bodies">
+                            <textarea ng-model="wh.modelNamesForBodies[$index]"class="form-control" type="text" id="input{{modelNamesForBodies[$index]}}">
+                            </textarea>
+                        </td>
+                    </tr>
+
+                </table>
         </div>
                 
         </div>
+    </div>
 <!--        //koniec containera-->
 	
 	

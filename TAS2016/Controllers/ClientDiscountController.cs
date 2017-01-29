@@ -23,10 +23,10 @@ namespace TAS2016.Controllers
             return _repository.GetAll();
         }
 
-        [Route("clientdiscount/{id}")]
-        public ClientDiscount Id(Client Client)
+        [Route("clientdiscount/{ClientId}")]
+        public ClientDiscount Id(int ClientId)
         {
-            return _repository.Get(Client);
+            return _repository.Get(ClientId);
         }
 
         [HttpPost]
@@ -37,18 +37,18 @@ namespace TAS2016.Controllers
         }
 
         [HttpPut]
-        [Route("clientdiscount/{id}")]
-        public void Put(Client Client, [FromBody]ClientDiscount clientDiscount)
+        [Route("clientdiscount/{ClientId}")]
+        public void Put(int ClientId, [FromBody]ClientDiscount clientDiscount)
         {
-            clientDiscount.Client = Client;
+            clientDiscount.ClientId = ClientId;
             _repository.Update(clientDiscount);
         }
 
         [HttpDelete]
-        [Route("clientdiscount/{id}")]
-        public void Delete(Client Client)
+        [Route("clientdiscount/{ClientId}")]
+        public void Delete(int ClientId)
         {
-            _repository.Delete(Client);
+            _repository.Delete(ClientId);
         }
     }
 }
