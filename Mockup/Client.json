@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Client",
+        "adress": "ul. Poziomkowa",
+        "emailAdress": null,
+        "phoneNumber": "0000000",
+        "nip": "12134415",
+        "vat": 0
+    },
+    {
+        "id": 2,
+        "name": "Kasia <3",
+        "adress": "ul. Poziomkowa",
+        "emailAdress": null,
+        "phoneNumber": "00000210",
+        "nip": "12134415",
+        "vat": 0
+    },
+    {
+        "id": 3,
+        "name": "Kasia <3",
+        "adress": "ul. Poziomkowa 4",
+        "emailAdress": null,
+        "phoneNumber": "00000210",
+        "nip": "12134415",
+        "vat": 0
+    },
+    {
+        "id": 4,
+        "name": "Kasia <3",
+        "adress": "ul. Poziomkowa 24",
+        "emailAdress": null,
+        "phoneNumber": "00000210",
+        "nip": "12134415",
+        "vat": 0
+    },
+    {
+        "id": 5,
+        "name": "Kasia <3",
+        "adress": "ul. Poziomkowa 24",
+        "emailAdress": null,
+        "phoneNumber": "00000210",
+        "nip": "1213441345",
+        "vat": 0
+    },
+    {
+        "id": 6,
+        "name": "Kasia <3",
+        "adress": "ul. Poziomkowa 24",
+        "emailAdress": null,
+        "phoneNumber": "00000210",
+        "nip": "1213441345",
+        "vat": 1
+    }
+]
