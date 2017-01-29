@@ -17,13 +17,15 @@
     overflow-x: visible;
   }
 }
+/*
 .navbar
 {
 	max-width:300px;
 	margin-right: 0;
 	margin-left: 0;
-    background-color: red;
 }	
+*/
+
 
 .navbar-nav,
 .navbar-nav > li,
@@ -34,16 +36,21 @@
     float:none !important;
 }
 
-.navbar-right .dropdown-menu {left:0;right:auto;}
+.navbar-right .dropdown-menu 
+{
+    left:0;
+    right:auto;
+}
 .navbar-collapse .navbar-nav.navbar-right:last-child 
 {
     margin-right: 0;
 }
+
 #dropdownParent
 {
     /* background: red;test
     padding-bottom: 20px;
-    position: absolute; */
+    position: absolute; 
 }
 span.caret
 {
@@ -56,7 +63,10 @@ span.caret
 
 .vcenter/*do poprawienia*/
 {
-    padding-top: 10%;
+    min-height: 30%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 30vh; /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
 }
 form div textarea.form-control
 {
