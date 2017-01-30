@@ -6,14 +6,13 @@ app.controller('ClientController', function($scope, $http)
     $scope.bodiesDisplay =$scope.bodies;
     $scope.data = ["janusz"];
     
-//    $http({
-//  method: 'GET',
-//  url: 'http://tas2016.azurewebsites.net/Client/'
-//}).then(function successCallback(response) {
-//    // this callback will be called asynchronously
-//    // when the response is available
-//  }, function errorCallback(response) {
-//    // called asynchronously if an error occurs
-//    // or server returns response with an error status.
-//  });
+    $http({
+    method: 'GET',
+    url: 'http://localhost:61690/Client'})
+    .then(function successCallback(response) {
+        console.log(response.data);
+    }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+    });
 });
