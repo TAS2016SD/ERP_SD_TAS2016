@@ -15,7 +15,7 @@ using TAS2016.Services;
 
 namespace TAS2016.Controllers
 {
-    [Authorize]
+    
     public class MobileAccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

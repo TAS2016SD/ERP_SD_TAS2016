@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace TAS2016.Controllers
 {
-    [Authorize]
+    
     public class ClientController : Controller
     {   
         private readonly ClientRepository _repository;

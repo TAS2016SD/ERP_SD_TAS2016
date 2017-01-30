@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace TAS2016.Controllers
 {
-    [Authorize]
+    
     public class MaterialController : Controller
     {   
         private readonly MaterialRepository _repository;
