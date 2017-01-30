@@ -8,9 +8,10 @@ using TAS2016.Data;
 namespace TAS2016.Migrations
 {
     [DbContext(typeof(ERPDbContext))]
-    partial class ERPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170129104348_m7")]
+    partial class m7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
@@ -106,64 +107,6 @@ namespace TAS2016.Migrations
                     b.ToTable("Materials");
                 });
 
-            modelBuilder.Entity("TAS2016.Models.MaterialDiscount", b =>
-                {
-                    b.Property<int>("MaterialId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("DiscountId");
-
-                    b.Property<int?>("MaterialId1");
-
-                    b.HasKey("MaterialId");
-
-                    b.HasIndex("DiscountId");
-
-                    b.HasIndex("MaterialId1");
-
-                    b.ToTable("MaterialDiscount");
-                });
-
-            modelBuilder.Entity("TAS2016.Models.Provider", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Adress")
-                        .IsRequired();
-
-                    b.Property<string>("EmailAdress");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<string>("ProviderName")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Providers");
-                });
-
-            modelBuilder.Entity("TAS2016.Models.Seller", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Adress")
-                        .IsRequired();
-
-                    b.Property<string>("NIP")
-                        .IsRequired()
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Name")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sellers");
-                });
-
             modelBuilder.Entity("TAS2016.Models.WarehouseStatus", b =>
                 {
                     b.Property<string>("StoragePlace")
@@ -191,18 +134,6 @@ namespace TAS2016.Migrations
                         .WithMany()
                         .HasForeignKey("DiscountId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("TAS2016.Models.MaterialDiscount", b =>
-                {
-                    b.HasOne("TAS2016.Models.Discount", "Discount")
-                        .WithMany()
-                        .HasForeignKey("DiscountId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("TAS2016.Models.Material", "Material")
-                        .WithMany()
-                        .HasForeignKey("MaterialId1");
                 });
 
             modelBuilder.Entity("TAS2016.Models.WarehouseStatus", b =>

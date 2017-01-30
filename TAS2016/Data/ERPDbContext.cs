@@ -16,6 +16,8 @@ namespace TAS2016.Data
         public DbSet<Material> Materials { get; set; }
         public DbSet<WarehouseStatus> WarehouseStatuses { get; set; }
         public DbSet<ClientDiscount> ClientDiscounts { get; set; }
+        public DbSet<Provider> Providers { get; set; }
+        public DbSet<Seller> Sellers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +26,9 @@ namespace TAS2016.Data
             modelBuilder.Entity<Material>();
             modelBuilder.Entity<WarehouseStatus>();
             modelBuilder.Entity<ClientDiscount>();
+            modelBuilder.Entity<Provider>();
+            modelBuilder.Entity<Seller>();
+            modelBuilder.Entity<MaterialDiscount>();
             modelBuilder.ForSqlServerUseIdentityColumns();
         }
 

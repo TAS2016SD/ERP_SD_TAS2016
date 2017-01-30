@@ -9,7 +9,7 @@ namespace TAS2016.Models
     public class ClientDiscount
     {   [Required]
         [Key]
-        public int ClientId;
+        public int ClientId { get; set; }
         [Required]
         public Client Client { get; set; }
         [Required]

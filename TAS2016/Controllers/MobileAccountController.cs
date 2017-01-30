@@ -58,7 +58,7 @@ namespace TAS2016.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
-                    return Ok("Login Sucess");
+                    return Ok(new Message("Login success"));
                 }
                
                 
@@ -66,7 +66,7 @@ namespace TAS2016.Controllers
                 {
                     Console.WriteLine(model.Email);
                     Console.WriteLine(model.Password);
-                    return BadRequest("Login failed");
+                    return BadRequest(new Message("Login failed"));
 
                 }
             }
