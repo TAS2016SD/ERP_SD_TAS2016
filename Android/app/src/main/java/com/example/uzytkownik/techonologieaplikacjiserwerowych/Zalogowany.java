@@ -21,20 +21,21 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.net.CookieManager;
 import java.util.HashMap;
-
-
 /**
  * Created by uzytkownik on 23.11.2016.
  */
 
 public class Zalogowany extends Activity {
-
+    String stringData = "";
     public static String Name = "name1";
     String url = "http://tas2016.azurewebsites.net/mobile/LogOff";
+    String url2 = "http://tas2016.azurewebsites.net/Client";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,8 +87,7 @@ public class Zalogowany extends Activity {
 
                 final HashMap<String, String> params = new HashMap<String, String>();
 
-                params.put("", "");
-
+                params.put("jh", "");
 
                 JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(params),
                         new Response.Listener<JSONObject>() {
@@ -95,7 +95,6 @@ public class Zalogowany extends Activity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 //Log.v("Response:%n %s", response.toString());
-                                //System.out.println("HEJ");
                             }
                         }, new Response.ErrorListener() {
 
@@ -112,16 +111,15 @@ public class Zalogowany extends Activity {
                                 e.printStackTrace();
                             }
                         }
+                        else{
+                            showDialog();
+                        }
                         Log.e("Error", stringData);
-
                     }
                 });
                 odp(req);
-
-                showDialog();
             }
         });
-
     }
 
 
@@ -147,7 +145,9 @@ public class Zalogowany extends Activity {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                Intent intent = new Intent(Zalogowany.this, Zalogowany.class);
+                startActivity(intent);
+                intent.putExtra(Login.LOGOUT, false);
             }
         });
         AlertDialog dialog = builder.create();
