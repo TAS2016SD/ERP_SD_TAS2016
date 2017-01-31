@@ -20,16 +20,36 @@
                     <tr>
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>
                     </tr>
-                    <tr>
-                        <td ng-repeat="body in bodiesDisplay">
-                            <h5> {{client.modelNamesForBodies[$index]}}</h5>
+<!--                    <tr ng-repeat="client in clients track by $index" ng-init=" models=['id','name'','adress'','emailAdress'','phoneNumber'','nip'','vat'] ">-->
+                       <tr ng-repeat="client in clients track by $index">
+                        <td ng-init="models">
+                            {{client.id}}
                         </td>
+                        <td>
+                            {{client.name}}
+                        </td>
+                        <td>
+                            {{client.adress}}
+                        </td>
+                        <td>
+                            {{client.emailAdress}}
+                        </td>
+                        <td>
+                            {{client.phoneNumber}}
+                        </td>
+                        <td>
+                            {{client.nip}}
+                        </td>
+                        <td>
+                            {{client.vat}}
+                        </td>
+
                     </tr>
                 </table>
         </div>
                 
         </div>
-<!--        //koniec containera-->
+<!--        //koniec containera
 	
 	
 	

@@ -4,15 +4,18 @@ app.controller('ClientController', function($scope, $http)
     $scope.bodies=["Id klienta", "Nazwa", "Adres", "E-mail", "Numer telefonu", "NIP", "VAT"];
     $scope.modelNamesForBodies = ["IdKlienta", "Nazwa", "Adres","Email","NumerTelefonu","NIP","VAT"];
     $scope.bodiesDisplay =$scope.bodies;
-    $scope.data = ["janusz"];
+    $scope.models= ["id","name","adress","emailAdress","phoneNumber","nip","vat"];
     
     $http({
     method: 'GET',
     url: 'http://localhost:61690/Client'})
     .then(function successCallback(response) {
         console.log(response.data);
+        $scope.clients = response.data;
+//        console.log($scope.models[0]);
+//        $scope.databaseModel = response.
     }, function errorCallback(response) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
-    });
+        });
 });
