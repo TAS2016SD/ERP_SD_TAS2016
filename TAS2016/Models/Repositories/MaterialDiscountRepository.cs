@@ -25,7 +25,7 @@ namespace TAS2016.Models.Repositories
         {
             MaterialDiscount cd = _dbContext.MaterialDiscounts.
                 Where(c => c.MaterialId == MaterialId).Single();
-            _dbContext.ClientDiscounts.Remove(cd);
+            _dbContext.MaterialDiscounts.Remove(cd);
             _dbContext.SaveChanges();
         }
 

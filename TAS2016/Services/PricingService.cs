@@ -18,7 +18,7 @@ namespace TAS2016.Services
 
         public decimal GetVatValue(int MaterialId,int ClientId)
         {
-
+            throw new NotImplementedException();
         }
 
     }

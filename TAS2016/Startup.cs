@@ -60,6 +60,11 @@ namespace TAS2016
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<ClientRepository, ClientRepository>();
             services.AddScoped<MaterialRepository, MaterialRepository>();
+            services.AddScoped<ClientDiscountRepository, ClientDiscountRepository>();
+            services.AddScoped<MaterialDiscountRepository, MaterialDiscountRepository>();
+            services.AddScoped<ProviderRepository, ProviderRepository>();
+            services.AddScoped<SellerRepository, SellerRepository>();
+            services.AddScoped<WarehouseStatusRepository, WarehouseStatusRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
