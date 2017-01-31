@@ -16,6 +16,6 @@ namespace TAS2016.Models
         public Seller Seller { get; set; }
         public DateTime InvoiceDate { get; set; }
 
-        
+        public virtual ICollection<InvoicePosition> Positions { get; set; }
     }
 }

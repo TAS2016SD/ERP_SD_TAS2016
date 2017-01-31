@@ -28,6 +28,11 @@ namespace TAS2016.Models.Repositories
             _dbContext.SaveChanges();
         }
 
+        public IEnumerable<Provider> GetAll()
+        {
+            return _dbContext.Providers;
+        }
+
         public Provider Get(int Id)
         {
             return _dbContext.Providers.Where(c => c.Id == Id).Single();
