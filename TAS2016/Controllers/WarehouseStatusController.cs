@@ -23,7 +23,7 @@ namespace TAS2016.Controllers
             return _repository.GetAll();
         }
 
-        [Route("warehousestatus/{id}")]
+        [Route("warehousestatus/{StoragePlace}")]
         public WarehouseStatus Id(string StoragePlace)
         {
             return _repository.GetWarehouseStatus(StoragePlace);
@@ -37,15 +37,16 @@ namespace TAS2016.Controllers
         }
 
         [HttpPut]
-        [Route("warehousestatus/{id}")]
+        [Route("warehousestatus/{StoragePlace}")]
         public void Put(string StoragePlace, [FromBody]WarehouseStatus warehouseStatus)
         {
             warehouseStatus.StoragePlace = StoragePlace;
+            warehouseStatus.MaterialId = warehouseStatus.Material.Id;
             _repository.Update(warehouseStatus);
         }
 
         [HttpDelete]
-        [Route("warehousestatus/{id}")]
+        [Route("warehousestatus/{StoragePlace}")]
         public void Delete(string StoragePlace)
         {
             _repository.Remove(StoragePlace);

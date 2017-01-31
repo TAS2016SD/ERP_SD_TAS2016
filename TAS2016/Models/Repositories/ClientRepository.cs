@@ -37,7 +37,10 @@ namespace TAS2016.Models.Repositories
    
         public IEnumerable<Client> ListAll()
         {
+            
             return _dbContext.Clients.ToList();
+            
+
         }
 
         public void Update(Client client)

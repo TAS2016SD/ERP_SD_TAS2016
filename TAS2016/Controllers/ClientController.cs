@@ -29,7 +29,8 @@ namespace TAS2016.Controllers
         public IEnumerable<Client> GetAll()
         {
             
-         return _repository.ListAll();
+         return _repository.ListAll();  
+            
 
         }
 

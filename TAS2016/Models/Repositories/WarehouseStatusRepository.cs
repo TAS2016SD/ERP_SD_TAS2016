@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,14 +35,15 @@ namespace TAS2016.Models.Repositories
             _dbContext.SaveChanges();
         }
 
-        public WarehouseStatus GetWarehouseStatus(string StoragePlace)
+        public  WarehouseStatus GetWarehouseStatus(string StoragePlace)
         {
-            return _dbContext.WarehouseStatuses.Where(c => c.StoragePlace == StoragePlace).Single();
+            return _dbContext.WarehouseStatuses.Include(i => i.Material).Single(M => M.StoragePlace == StoragePlace);
+
         }
 
         public IEnumerable<WarehouseStatus> GetAll()
         {
-            return _dbContext.WarehouseStatuses.ToList();
+            return _dbContext.WarehouseStatuses.Include(i => i.Material).ToList();
         }
     }
 }

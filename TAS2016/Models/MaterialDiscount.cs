@@ -12,7 +12,7 @@ namespace TAS2016.Models
         [Key]
         public int MaterialId { get; set; }
     
-        public Material Material { get; set; }
+       public Material Material { get; set; }
         [Required]
         public Discount Discount { get; set; }
     }
