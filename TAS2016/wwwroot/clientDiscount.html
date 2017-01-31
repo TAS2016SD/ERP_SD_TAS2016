@@ -25,9 +25,12 @@
                     <tr>
                         <th ng-repeat="body in bodiesDisplayClient">{{body}}</th>
                     </tr>
-                    <tr>
-                        <td ng-repeat="body in bodiesDisplayClient">
-                            <h5>{{discount.modelNamesForBodiesClient[$index]}}</h5>
+                    <tr ng-repeat="clientD in clientDiscounts track by $index">
+                        <td>
+                            {{clientD.clientId}} {{clientD.client}}
+                        </td>
+                        <td>
+                            {{clientD.discount}}
                         </td>
                     </tr>
                 </table>

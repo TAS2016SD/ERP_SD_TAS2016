@@ -25,8 +25,12 @@
                         <th ng-repeat="body in bodiesDisplayMaterial">{{body}}</th>
                     </tr>
                     <tr>
-                        <td ng-repeat="body in bodiesDisplayMaterial">
-                            <h5>{{discount.modelNamesForBodiesMaterial[$index]}}</h5>
+                        <tr ng-repeat="materialD in materialDiscounts track by $index">
+                        <td>
+                            {{materialD.clientId}} {{materialD.client}}
+                        </td>
+                        <td>
+                            {{materialD.discount}}
                         </td>
                     </tr>
                 </table>

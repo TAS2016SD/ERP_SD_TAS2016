@@ -20,9 +20,21 @@
                     <tr>
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>
                     </tr>
-                    <tr>
-                        <td ng-repeat="body in bodiesDisplay">
-                            <h5>{{provider.modelNamesForBodies[$index]}}</h5>
+                        <tr ng-repeat="provider in providers track by $index">
+                        <td>
+                            {{provider.id}}
+                        </td>
+                        <td>
+                            {{provider.providerName}}
+                        </td>
+                        <td>
+                            {{provider.adress}}
+                        </td>
+                        <td>
+                            {{provider.emailAdress}}
+                        </td>
+                        <td>
+                            {{provider.phoneNumber}}
                         </td>
                     </tr>
                 </table>

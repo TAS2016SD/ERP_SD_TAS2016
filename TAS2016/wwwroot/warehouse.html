@@ -21,8 +21,15 @@
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>
                     </tr>
                     <tr>
-                        <td ng-repeat="body in bodiesDisplay">
-                            <h5>{{wh.modelNamesForBodies[$index]}}</h5>
+                        <tr ng-repeat="warehouse in warehouses track by $index">
+                        <td>
+                            {{warehouse.material}}
+                        </td>
+                        <td>
+                            {{warehouse.amount}}
+                        </td>
+                        <td>
+                            {{warehouse.storagePlace}}
                         </td>
                     </tr>
                 </table>
