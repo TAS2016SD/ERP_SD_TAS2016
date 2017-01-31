@@ -21,6 +21,6 @@ namespace TAS2016.Models
 
         public decimal Price { get; set; }
 
-        public virtual ICollection<InvoicePosition> Positions { get; set; }
+        
     }
 }
