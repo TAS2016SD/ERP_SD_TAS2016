@@ -20,10 +20,9 @@
                     <tr>
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>
                     </tr>
-                    <tr>
                         <tr ng-repeat="provider in providers track by $index">
                         <td>
-                            <h5> {{provider.id}}</h5>
+                            {{provider.id}}
                         </td>
                         <td>
                             {{provider.providerName}}
