@@ -12,8 +12,6 @@ app.controller('ClientController', function($scope, $http)
     .then(function successCallback(response) {
         console.log(response.data);
         $scope.clients = response.data;
-//        console.log($scope.models[0]);
-//        $scope.databaseModel = response.
     }, function errorCallback(response) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.

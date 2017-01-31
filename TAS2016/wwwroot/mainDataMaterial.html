@@ -20,9 +20,30 @@
                     <tr>
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>
                     </tr>
-                    <tr>
-                        <td ng-repeat="body in bodiesDisplay">
-                            <h5>{{material.modelNamesForBodies[$index]}}</h5>
+                    <tr ng-repeat="material in materials track by $index">
+                        <td>
+                            {{material.id}}
+                        </td>
+                        <td>
+                            {{material.name}}
+                        </td>
+                        <td>
+                            {{material.basePrice}}
+                        </td>
+                        <td>
+                            {{material.priceUnit}}
+                        </td>
+                        <td>
+                            {{material.length}}
+                        </td>
+                        <td>
+                            {{material.width}}
+                        </td>
+                        <td>
+                            {{material.height}}
+                        </td>
+                        <td>
+                            {{material.weight}}
                         </td>
                     </tr>
                 </table>
