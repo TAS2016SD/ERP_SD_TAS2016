@@ -42,6 +42,12 @@ namespace TAS2016.Models.Repositories
                 return _dbContext.Orders.Include(m => m.Client).Include(m => m.Seller).Include(m => m.Positions).Where(c => c.Id == OrderId).Single();
             }
 
+            public Order GetNot()
+        {
+            return _dbContext.Orders.Include(m => m.Client).Include(m => m.Seller).Include(m => m.Positions).Where(c => c.Status == "").Single();
+
+        }
+
             public IEnumerable<Order> GetAll()
             {
 

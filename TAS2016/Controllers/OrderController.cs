@@ -27,6 +27,12 @@ namespace TAS2016.Controllers
 
         }
 
+        [Route("mobile/order")]
+        public Order Mobile()
+        {
+            return _repository.GetNot();
+        }
+
         [Route("order/{orderId}")]
         public Order Id(int orderId)
         {
