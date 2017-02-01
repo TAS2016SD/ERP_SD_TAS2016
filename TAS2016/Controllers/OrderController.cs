@@ -20,7 +20,11 @@ namespace TAS2016.Controllers
         [Route("order")]
         public IEnumerable<Order> GetAll()
         {
+
+            
+
             return _repository.GetAll();
+
         }
 
         [Route("order/{orderId}")]

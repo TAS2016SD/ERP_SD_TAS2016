@@ -27,7 +27,7 @@ namespace TAS2016.Models.Repositories
         {
             Invoice cd = _dbContext.Invoice.
                 Where(c => c.Id == InvoiceId).Single();
-            _dbContext.Orders.Remove(cd);
+            _dbContext.Invoice.Remove(cd);
             _dbContext.SaveChanges();
         }
 
@@ -43,7 +43,8 @@ namespace TAS2016.Models.Repositories
         }
 
         public IEnumerable<Invoice> GetAll() { 
-      
+            
+
             return _dbContext.Invoice.Include(m => m.Positions);
         }
     }
