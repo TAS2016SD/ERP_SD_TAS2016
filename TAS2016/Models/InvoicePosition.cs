@@ -12,6 +12,7 @@ namespace TAS2016.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        public int MaterialId { get; set; }
         public Material Material { get; set; }
         
         public double Amount { get; set; }

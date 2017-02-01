@@ -12,9 +12,12 @@ namespace TAS2016.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        public int ClientId { get; set; }
         public Client Client { get; set; }
+        public int PayerId { get; set; }
         public Client Payer { get; set; }
         [Required]
+        public int SellerId { get; set; }
         public Seller Seller { get; set; }
         [Required]
         public string Status { get; set; }
