@@ -8,7 +8,7 @@ app.controller('ClientController', function($scope, $http)
     
     $http({
     method: 'GET',
-    url: 'http://tas2016.azurewebsites.net/Client'})
+    url: 'http://localhost:61690/Client'})
     .then(function successCallback(response) {
         console.log(response.data);
         $scope.clients = response.data;
@@ -18,7 +18,7 @@ app.controller('ClientController', function($scope, $http)
         });
     $http({
     method: 'POST',
-    url: 'http://tas2016.azurewebsites.net/Client'})
+    url: 'http://localhost:61690/Client'})
     .then(function successCallback(response) {
         console.log(response.data);
         $scope.clients = response.data;

@@ -18,8 +18,10 @@
                         <th ng-repeat="body in bodies">{{body}}</th>
                     </tr>
                     <tr>
-                        <td ng-repeat="body in bodies">
-                            <h5>{{wh.modelNamesForBodies[$index]}}</h5>
+                        <td ng-repeat="body in bodies track by $index">
+                            <h5> {{ wh.modelNamesForBodies[$index]}}
+<!--                            {{testM}}-->
+                            </h5>
                         </td>
                     </tr>
                 </table>
@@ -33,14 +35,28 @@
                         <td ng-repeat="body in bodies">
                             <textarea ng-model="wh.modelNamesForBodies[$index]"class="form-control" type="text" id="input{{modelNamesForBodies[$index]}}">
                             </textarea>
+<!--                            wh.modelNamesForBodies[$index]-->
                         </td>
+                        
+<!--
+                        <td ng-repeat="body in bodies">
+                            <textarea ng-model="wh.modelNamesForBodies[$index]"class="form-control" type="text" id="input{{modelNamesForBodies[$index]}}">
+                            </textarea>
+                            wh.modelNamesForBodies[$index]
+                        </td>
+-->
                     </tr>
 
                 </table>
+                
+<!--
+                <button type="button" ng-click="saveAllValues()">Save</button>
+                
                 <form ng-submit="sendPost()">
-<!--                <input ng-model="newName"/>-->
+                <input ng-model="newName"/>
                 <button type="submit">Send</button>
                 </form>
+-->
         </div>
                 
         </div>

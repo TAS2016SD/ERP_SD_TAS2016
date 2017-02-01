@@ -15,24 +15,33 @@ app.controller('WarehouseController', function($scope, $http)
     // called asynchronously if an error occurs
     // or server returns response with an error status.
         });
-    $scope.jsonTest = {
-    materialId: 4,
-    material: null,
-    amount: 10
-    };
-   $scope.sendPost = function()
+//    $scope.dataM = [];
+    $scope.jsonTest = 
     {
+        materialId: 4,
+        material: null,
+        amount: 10
+    };
+//    $scope.testM = "";
+//    $scope.saveAllValues = function() {
+//    alert($scope.testM);}
+   
+    $scope.sendPost = function()
+   {
+    
     $scope.parameter = JSON.stringify($scope.jsonTest);
+
     $scope.url = 'http://localhost:61690/warehouseStatus';
+
     $http.post($scope.url, $scope.parameter).
     success(function(data, status, headers, config) {
-        // this callback will be called asynchronously
-        // when the response is available
-        console.log(data);
-      }).
-      error(function(data, status, headers, config) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-      }); 
+    // this callback will be called asynchronously
+    // when the response is available
+    console.log(data);
+    }).
+    error(function(data, status, headers, config) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+    }); 
     }
 });
