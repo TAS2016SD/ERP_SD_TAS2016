@@ -21,9 +21,10 @@
                         <th ng-repeat="body in bodiesDisplay">{{body}}</th>
                     </tr>
                     <tr>
-                        <tr ng-repeat="warehouse in warehouses track by $index">
+                        <tr ng-repeat="warehouse in warehouses track by $index" ng-init="material = warehouse.material">
                         <td>
-                            {{warehouse.material}}
+                            <strong>ID:</strong> {{material.id}} <strong>Nazwa: </strong>
+                            {{material.name}}
                         </td>
                         <td>
                             {{warehouse.amount}}
