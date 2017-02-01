@@ -12,20 +12,56 @@
     <div class="container col-md-9" ng-controller="OrderController as order">
         <div class="col-md-7">
         <h1>Wyświetl zlecenia: </h1>
-        <!--        <p>{{test}}</p>-->
+        <!--        <h5>{{test}}</h5>-->
             <div class="orderHeader">
-                <h5 ng-repeat="header in headersDisplay">{{header}}</h5>
+<!--
+                <div ng-repeat="body in bodiesDisplay">
+                <h5>{{body}}</h5>
+                <div ng-repeat="order in orders track by $index" ng-init="position = order.positions[$index]">
+                            <td>{{position.id}}</td>
+                            <td>{{position.material}}</td>
+                            <td>{{position.amount}}</td>
+                            <td>{{position.price}}</td>
+                            <td>BRAK</td>
+                            <td>BRAK</td>
+                </div>
+                </div>
+                
+-->
+
+<!--
+              <tr ng-repeat-start="body in bodiesDisplay track by $index">
+                  <td>{{body}}</td>
+              </tr>
+              <tr ng-repeat-end>
+                  <td><div ng-repeat="order in orders track by $index" ng-init="init($index)"> <td>{{position.id}}</td><td>{{position.amount}}</td></div>
+                  </td>
+              </tr>
+              <
+-->
+    <div ng-repeat="order in orders track by $index" ng-init="init($index)">
+                    <h5>Id: {{position.id}}</h5>
+                    <h5>Ilość : {{position.amount}}</h5>
+                    <h5>Materiał: {{position.material}}</h5>
+                    <h5>Id materiału: {{position.materialId}}</h5>
+                    <h5>Cena: {{position.price}}</h5>
+        </div>
+
             </div>
         </div>
-                <div class="orderBody" ng-init="modelNamesForBodies">
-                   <table class="table table-livePrieview">
+                <div class="orderBody">
+                   <table class="table table-hover table-livePrieview">
                     <tr>
-                        <th ng-repeat="body in bodiesDisplay">{{body}}</th>
+                        <th ng-repeat="header in headersDisplay">{{header}}</th>
                     </tr>
-                    <tr>
-                        <td ng-repeat="body in bodiesDisplay">
-                            <h5>{{order.modelNamesForBodies[$index]}}</h5>
-                        </td>
+                    <tr ng-repeat="order in orders track by $index">
+                            <td>{{order.id}}</td>
+                            <td>{{order.clientId}}</td>
+                            <td>{{order.sellerId}}</td>
+                            <td>{{order.status}}</td>
+                            <td>{{order.orderPrice}}</td>
+                            <td>{{order.creationDate | date}}</td>
+                            <td>{{order.creator}}</td>
                     </tr>
                 </table>
         </div>
