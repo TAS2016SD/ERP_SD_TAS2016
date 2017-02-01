@@ -10,57 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@drawable/tlo"
-    tools:context="com.example.uzytkownik.techonologieaplikacjiserwerowych.Login">
+    tools:context="com.example.uzytkownik.techonologieaplikacjiserwerowych.Logowanie">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="4mm"
-        android:id="@+id/Login_naglowek"
-        android:textColor="@android:color/black"
-        android:text="@string/login_nagl"
-        android:textColorHint="@android:color/black"/>
-
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/login_editText"
-        android:layout_above="@+id/haslo_editText"
-        android:layout_marginBottom="78dp"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/login"
-        android:textSize="4mm"
-        android:textColor="@android:color/black" />
-
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/haslo_editText"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="45dp"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/haslo"
-        android:textSize="4mm"
-        android:textColor="@android:color/black" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/zaloguj_button"
-        android:layout_below="@+id/haslo_editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@android:color/white"
-        android:text="@string/zaloguj" />
 
     <TextView
         android:text="@string/wyl_inf"
@@ -78,5 +29,55 @@
         android:layout_alignTop="@+id/wyl_info"
         android:layout_centerHorizontal="true"
         android:id="@+id/result" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zaloguj_button"
+        android:background="@color/color_przyciski"
+        android:textColor="@android:color/white"
+        android:text="@string/zaloguj"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="4mm"
+        android:id="@+id/Login_naglowek"
+        android:textColor="@android:color/black"
+        android:text="@string/login_nagl"
+        android:textColorHint="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="8mm"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/haslo_editText"
+        android:hint="@string/haslo"
+        android:textSize="4mm"
+        android:textColor="@android:color/black"
+        android:background="@color/color_logowanie"
+        android:layout_marginTop="90dp"
+        android:layout_alignTop="@+id/login_editText"
+        android:layout_alignStart="@+id/login_editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="8mm"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/login_editText"
+        android:hint="@string/login"
+        android:background="@color/color_logowanie"
+        android:textSize="4mm"
+        android:textColor="@android:color/black"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

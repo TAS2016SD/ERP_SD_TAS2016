@@ -11,6 +11,10 @@
         <item name="android:textColorSecondaryInverse">@android:color/background_dark</item>
     </style>
 
+    <style name="PrimaryText" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
     <style name="style_Spinner">
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="android:dropDownSelector">@android:color/transparent</item>

@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
-    <Button
-        android:text="@string/wroc2"
+    <ScrollView
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/wroc_stan_button" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"
-        android:id="@+id/imie_stan" />
+        <RelativeLayout
+            android:id="@+id/lista"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/material_nazwa"
+                style="@style/PrimaryText"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:id="@+id/material_liczba"
+                style="@style/PrimaryText"
+                android:layout_below="@+id/material_nazwa"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:layout_height="40dp"/>
+
+            <TextView
+                android:id="@+id/material_cena"
+                style="@style/PrimaryText"
+                android:layout_below="@+id/material_liczba"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:layout_height="40dp"/>
+
+            <ImageView
+                android:id="@+id/zdjMagazyn"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+               />
+
+        </RelativeLayout>
+
+</ScrollView>
+
 </RelativeLayout>

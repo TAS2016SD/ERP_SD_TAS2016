@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Techonologie Aplikacji Serwerowych</string>
     <string name="zaloguj">Zaloguj</string>
-    <string name="login">Login</string>
+    <string name="login">Email</string>
     <string name="haslo">Hasło</string>
     <string name="wyl_inf">Wylogowano</string>
     <string name="wyloguj">Wyloguj</string>

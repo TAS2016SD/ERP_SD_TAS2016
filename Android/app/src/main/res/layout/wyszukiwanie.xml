@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="80dp">
+
+    <Button
+        android:text="szukaj"
+        android:layout_width="wrap_content"
+        android:id="@+id/szukaj"
+        android:paddingLeft="8dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginEnd="60dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/szukajET"
+        android:hint="czego szukasz"
+        android:layout_alignBaseline="@+id/szukaj"
+        android:layout_alignBottom="@+id/szukaj"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="49dp" />
+</RelativeLayout>

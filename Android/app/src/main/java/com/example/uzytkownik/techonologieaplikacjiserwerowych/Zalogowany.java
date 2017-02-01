@@ -7,10 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,18 +18,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.net.CookieManager;
 import java.util.HashMap;
 /**
  * Created by uzytkownik on 23.11.2016.
  */
 
 public class Zalogowany extends Activity {
-    String stringData = "";
+
     public static String Name = "name1";
     String url = "http://tas2016.azurewebsites.net/mobile/LogOff";
     String url2 = "http://tas2016.azurewebsites.net/Client";
@@ -45,16 +40,9 @@ public class Zalogowany extends Activity {
         Intent intent = getIntent();
 
 
-        //WYPISANIE IMIENIA NA PRZYWITANIE
-        String name = intent.getStringExtra(Login.NAME);
-        TextView header = (TextView) findViewById(R.id.witaj_textView);
-        header.setText("Zalogowany: " + name);
-
-        Name = name;
-
         // PRZYCISK KOMPLETUJ ZAMOWIENIE
-        Button kompletuj_zamowienie = (Button) findViewById(R.id.kompletuj_button);
-        kompletuj_zamowienie.setOnClickListener(new View.OnClickListener() {
+        Button complement = (Button) findViewById(R.id.kompletuj_button);
+        complement.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -65,12 +53,13 @@ public class Zalogowany extends Activity {
 
 
         // PRZYCISK STAN MAGAZYNU
-        Button stan_magazynu = (Button) findViewById(R.id.stan_button);
-        stan_magazynu.setOnClickListener(new View.OnClickListener() {
+        Button wareHouse= (Button) findViewById(R.id.stan_button);
+        wareHouse.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Zalogowany.this, Stan_magazynu.class);
+
+                Intent intent = new Intent(Zalogowany.this, Magazyn.class);
                 startActivity(intent);
             }
         });
@@ -134,9 +123,9 @@ public class Zalogowany extends Activity {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(Zalogowany.this, Login.class);
+                Intent intent = new Intent(Zalogowany.this, Logowanie.class);
                 startActivity(intent);
-                intent.putExtra(Login.LOGOUT, true);
+                intent.putExtra(Logowanie.LOGOUT, true);
                 showSuccessToast();
             }
         });
@@ -147,7 +136,7 @@ public class Zalogowany extends Activity {
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(Zalogowany.this, Zalogowany.class);
                 startActivity(intent);
-                intent.putExtra(Login.LOGOUT, false);
+                intent.putExtra(Logowanie.LOGOUT, false);
             }
         });
         AlertDialog dialog = builder.create();

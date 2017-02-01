@@ -1,6 +1,7 @@
 package com.example.uzytkownik.techonologieaplikacjiserwerowych;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,88 +27,72 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.CookieHandler;
 import java.net.CookieManager;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by uzytkownik on 04.01.2017.
  */
 
-public class Kompletuj_zamowienie extends Activity{
+public class Kompletuj_zamowienie  extends ListActivity {
 
-    String stringData = "";
-    String url2 = "http://tas2016.azurewebsites.net/Client";
-    NetworkResponse errorRes;
+    String url = "http://tas2016.azurewebsites.net/mobile/order";
     RequestQueue requestQueue;
-    String url3 = "http://demo5481117.mockable.io/recipes";
+    NetworkResponse errorRes;
+    String stringData = "";
+
+
+    static final List<String> nazwa_clienta = new ArrayList<String>();
+    static final List<String> id_zamowienia = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kompletuj_zamowienie);
-        CookieHandler cookie = CookieHandler.getDefault();
-        CookieManager.setDefault(CookieHandler.getDefault());
+
+        final CookieManager manager = new CookieManager();
+        CookieHandler.setDefault( manager  );
         requestQueue = Volley.newRequestQueue(this);
 
-        Intent intent = getIntent();
-
-        TextView header = (TextView) findViewById(R.id.imie);
-        header.setText("Zalogowany: " + Zalogowany.Name);
-        final TextView get = (TextView) findViewById(R.id.get);
-
-        // PRZYCISK WROC W KOMPLETUJ ZAMOWIENIE
-        Button wroc1 = (Button) findViewById(R.id.wroc_button);
-        wroc1.setOnClickListener(new View.OnClickListener() {
+        ///////////////////////////////////GET - SZUKAJ////////////////////////////////////////////////
+        JsonObjectRequest req2 = new JsonObjectRequest(Request.Method.GET, url,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject client = response.getJSONObject("client");
+                            String name = client.getString("name");
+                            String id = response.getString("id");
+                            nazwa_clienta.add(name);
+                            id_zamowienia.add(id);
+                            //System.out.println(name);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
 
             @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(Kompletuj_zamowienie.this, Zalogowany.class);
-                //startActivity(intent);
-                //finish();
-                /////////////GET////////////////////////////////////////////////////////////////
-                JsonArrayRequest req2 = new JsonArrayRequest(Request.Method.GET, url2,
-                        new Response.Listener<JSONArray>() {
-
-                            @Override
-                            public void onResponse(JSONArray response) {
-                                try {
-                                    for(int i = 0; i < response.length(); i++) {
-
-                                        JSONObject jresponse = response.getJSONObject(i);
-                                        String nickname = jresponse.getString("id");
-                                        Log.d("nickname", nickname);
-                                        get.setText(nickname);
-                                    }
-                                }catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-
-                            }
-                        }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // VolleyLog.e("Error: ", error.getMessage());
-                        errorRes = error.networkResponse;
-                        if (errorRes != null && errorRes.data != null) {
-                            try {
-                                stringData = new String(errorRes.data, "UTF-8");
-                                //showErrorToast();
-                            } catch (UnsupportedEncodingException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        Log.e("Error", stringData);
+            public void onErrorResponse(VolleyError error) {
+                errorRes = error.networkResponse;
+                if (errorRes != null && errorRes.data != null) {
+                    try {
+                        stringData = new String(errorRes.data, "UTF-8");
+                        //showErrorToast();
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
                     }
-                });
-                odp(req2);
+                }
+                Log.e("Error", stringData);
             }
         });
+        odp(req2);
     }
 
-    private void odp(JsonArrayRequest postRequest)
+    private void odp(JsonObjectRequest postRequest)
     {
         Volley.newRequestQueue(this).add(postRequest);
-    }
+        setListAdapter(new KompletujAdapter(this, nazwa_clienta, id_zamowienia));
 
+    }
 }
