@@ -41,7 +41,7 @@ namespace TAS2016.Controllers
         public void Put(string StoragePlace, [FromBody]WarehouseStatus warehouseStatus)
         {
             warehouseStatus.StoragePlace = StoragePlace;
-            warehouseStatus.MaterialId = warehouseStatus.Material.Id;
+            
             _repository.Update(warehouseStatus);
         }
 
