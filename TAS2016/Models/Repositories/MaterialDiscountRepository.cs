@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TAS2016.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace TAS2016.Models.Repositories
 {
@@ -37,12 +38,12 @@ namespace TAS2016.Models.Repositories
 
         public MaterialDiscount Get(int MaterialId)
         {
-            return _dbContext.MaterialDiscounts.Where(c => c.MaterialId == MaterialId).Single();
+            return _dbContext.MaterialDiscounts.Include(m => m.Discount).Where(c => c.MaterialId == MaterialId).Single();
         }
 
         public IEnumerable<MaterialDiscount> GetAll()
         {
-            return _dbContext.MaterialDiscounts;
+            return _dbContext.MaterialDiscounts.Include(m => m.Discount);
         }
     }
 }
