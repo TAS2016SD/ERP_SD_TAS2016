@@ -16,4 +16,14 @@ app.controller('ClientController', function($scope, $http)
     // called asynchronously if an error occurs
     // or server returns response with an error status.
         });
+    $http({
+    method: 'POST',
+    url: 'http://tas2016.azurewebsites.net/Client'})
+    .then(function successCallback(response) {
+        console.log(response.data);
+        $scope.clients = response.data;
+    }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+        });
 });
