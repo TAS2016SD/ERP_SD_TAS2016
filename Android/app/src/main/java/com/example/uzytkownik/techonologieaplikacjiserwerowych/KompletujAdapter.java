@@ -1,10 +1,13 @@
 package com.example.uzytkownik.techonologieaplikacjiserwerowych;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,6 +43,8 @@ public class KompletujAdapter extends ArrayAdapter<String> {
         textView.setText("Klient: "+ nazwa_clienta.get(position));
         textView2.setText("Id zamówienia: " + id_zamowienia.get(position));
         imageView.setImageResource(R.drawable.zakupy);
+        Button button = (Button) rowView.findViewById(R.id.wybierz);
+
 
         return rowView;
     }

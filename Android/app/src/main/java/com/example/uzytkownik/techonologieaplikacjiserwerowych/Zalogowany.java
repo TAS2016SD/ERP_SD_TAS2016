@@ -46,7 +46,7 @@ public class Zalogowany extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Zalogowany.this, Kompletuj_zamowienie.class);
+                Intent intent = new Intent(Zalogowany.this, Kompletuj.class);
                 startActivity(intent);
             }
         });
@@ -106,6 +106,7 @@ public class Zalogowany extends Activity {
                         Log.e("Error", stringData);
                     }
                 });
+
                 odp(req);
             }
         });

@@ -97,21 +97,19 @@ public class Magazyn extends ListActivity {
             }
         });
         odp(req2);
-    }
-
-
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-
-        //get selected items
-        String selectedValue = (String) getListAdapter().getItem(position);
-        Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
-
+        setListAdapter(new MagazynAdapter(this, nazwa_materialu, liczba, koszt));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        nazwa_materialu.clear();
+        liczba.clear();
+        koszt.clear();
     }
 
     private void odp(JsonArrayRequest postRequest)
     {
         Volley.newRequestQueue(this).add(postRequest);
-        setListAdapter(new MagazynAdapter(this, nazwa_materialu, liczba, koszt));
     }
 }

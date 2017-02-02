@@ -1,62 +1,48 @@
 package com.example.uzytkownik.techonologieaplikacjiserwerowych;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.CookieHandler;
 import java.net.CookieManager;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Created by uzytkownik on 04.01.2017.
+ * Created by domir on 2/2/2017.
  */
 
-public class Kompletuj_zamowienie  extends ListActivity {
+public class Szczegoly extends Activity {
 
-    String url = "http://tas2016.azurewebsites.net/mobile/order";
-    RequestQueue requestQueue;
+
     NetworkResponse errorRes;
     String stringData = "";
-    String name;
-    String id;
+    RequestQueue requestQueue;
+    String url = "http://tas2016.azurewebsites.net/mobile/order";
 
-    static final List<String> nazwa_clienta = new ArrayList<String>();
-    static final List<String> id_zamowienia = new ArrayList<String>();
-
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.szczegoly_zamowienia);
 
         final CookieManager manager = new CookieManager();
-        CookieHandler.setDefault( manager  );
-        requestQueue = Volley.newRequestQueue(this);
+        CookieHandler.setDefault(manager);
 
+        requestQueue = Volley.newRequestQueue(this);
         ///////////////////////////////////GET - SZUKAJ////////////////////////////////////////////////
         JsonObjectRequest req2 = new JsonObjectRequest(Request.Method.GET, url,
                 new Response.Listener<JSONObject>() {
@@ -64,11 +50,30 @@ public class Kompletuj_zamowienie  extends ListActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONObject client = response.getJSONObject("client");
-                            name = client.getString("name");
-                            id = response.getString("id");
-                            nazwa_clienta.add(name);
-                            id_zamowienia.add(id);
-                            //System.out.println(name);
+                            String id = client.getString("name");
+
+                            String name = response.getString("id");
+
+                            String order = response.getString("orderPrice");
+
+                            JSONObject payer = response.getJSONObject("payer");
+                            String name_payer = payer.getString("name");
+
+                            JSONObject seller = response.getJSONObject("seller");
+                            String name_seller = seller.getString("name");
+
+
+                            TextView textView = (TextView) findViewById(R.id.id);
+                            TextView textView2 = (TextView) findViewById(R.id.client);
+                            TextView textView3 = (TextView) findViewById(R.id.payer);
+                            TextView textView4 = (TextView) findViewById(R.id.seller);
+                            //TextView textView5 = (TextView) findViewById(R.id.orderPrice);
+                            textView.setText(id);
+                            textView2.setText(name);
+                            textView3.setText(name_payer);
+                            textView4.setText(name_seller);
+                            //textView5.setText(order);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -90,27 +95,17 @@ public class Kompletuj_zamowienie  extends ListActivity {
             }
         });
         odp(req2);
-        setListAdapter(new KompletujAdapter(this, nazwa_clienta, id_zamowienia));
-        try {
-            Thread.sleep(1100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        nazwa_clienta.clear();
-        id_zamowienia.clear();
+
+       Button complement = (Button) findViewById(R.id.wyslij);
+        complement.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-
-        boolean selectedValue = getListAdapter().isEnabled(position);
-        if(selectedValue)
-        {
-            Intent intent = new Intent(Kompletuj_zamowienie.this, Szczegoly.class);
-            startActivity(intent);
-        }
-
-    }
 
     private void odp(JsonObjectRequest postRequest)
     {

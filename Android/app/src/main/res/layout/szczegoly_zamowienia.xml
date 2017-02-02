@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/orderPrice">
+    <ImageView
+        android:id="@+id/zdjSzczegoly"
+        android:src="@drawable/zakupy"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/zdjSzczegoly"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/id" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id"
+        android:layout_alignEnd="@+id/id"
+        android:layout_marginTop="26dp"
+        android:id="@+id/client" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zdjSzczegoly"
+        android:layout_alignStart="@+id/client"
+        android:layout_marginTop="20dp"
+        android:id="@+id/payer" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/payer"
+        android:layout_alignEnd="@+id/payer"
+        android:layout_marginTop="41dp"
+        android:id="@+id/seller" />
+
+    <Button
+        android:text="Wyslij"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seller"
+        android:layout_toEndOf="@+id/zdjSzczegoly"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="69dp"
+        android:id="@+id/wyslij" />
+
+
+</RelativeLayout>
