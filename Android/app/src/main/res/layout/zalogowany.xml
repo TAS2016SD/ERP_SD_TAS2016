@@ -7,24 +7,11 @@
         android:layout_weight="0.08"
         android:background="@drawable/tlo">
 
-    <Button
-        android:text="@string/stan_mag"
-        android:id="@+id/stan_button"
-        android:layout_width="40mm"
-        android:layout_height="14mm"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="80dp"
-        android:textSize="4mm"
-        android:background="@color/color_przyciski"
-        android:textColor="@android:color/white"
-        android:layout_below="@+id/witaj_textView"
-        android:layout_centerHorizontal="true"/>
-
 
     <Button
         android:text="@string/kompletuj"
-        android:layout_width="40mm"
-        android:layout_height="14mm"
+        android:layout_width="38mm"
+        android:layout_height="12mm"
         android:id="@+id/kompletuj_button"
         android:textSize="4mm"
         android:background="@color/color_przyciski"
@@ -35,8 +22,8 @@
 
     <Button
         android:text="@string/wyloguj"
-        android:layout_width="40mm"
-        android:layout_height="14mm"
+        android:layout_width="38mm"
+        android:layout_height="12mm"
         android:id="@+id/wyloguj_button"
         android:textSize="4mm"
         android:background="@color/color_przyciski"
@@ -45,5 +32,17 @@
         android:layout_marginTop="43dp"
         android:layout_below="@+id/kompletuj_button"
         android:layout_alignStart="@+id/kompletuj_button" />
+
+    <Button
+        android:text="@string/stan_mag"
+        android:id="@+id/stan_button"
+        android:layout_width="38mm"
+        android:layout_height="12mm"
+        android:textSize="4mm"
+        android:background="@color/color_przyciski"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

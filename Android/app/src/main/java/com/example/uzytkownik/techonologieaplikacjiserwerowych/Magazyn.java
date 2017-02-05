@@ -3,10 +3,6 @@ package com.example.uzytkownik.techonologieaplikacjiserwerowych;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.Toast;
-
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,6 +38,7 @@ public class Magazyn extends ListActivity {
     static final List<String> koszt = new ArrayList<String>();
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,8 +70,6 @@ public class Magazyn extends ListActivity {
                                  nazwa_materialu.add(material2.toString());
                                  liczba.add(liczba2.toString());
                                  koszt.add(koszt2.toString());
-
-                                // System.out.println(koszt.get(i)+ "rozmiar: "+nazwa_materialu.size());
                             }
                         }catch (JSONException e) {
                             e.printStackTrace();
@@ -98,6 +93,7 @@ public class Magazyn extends ListActivity {
         });
         odp(req2);
         setListAdapter(new MagazynAdapter(this, nazwa_materialu, liczba, koszt));
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

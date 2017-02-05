@@ -35,12 +35,6 @@
         </activity>
 
         <activity
-            android:name=".Stan_magazynu"
-            android:label="Technologie Aplikacji Serwerowych"
-            android:launchMode="singleInstance">
-        </activity>
-
-        <activity
         android:name=".Magazyn"
         android:label="Technologie Aplikacji Serwerowych"
         android:launchMode="singleInstance">
@@ -52,11 +46,6 @@
             android:launchMode="singleInstance">
             </activity>
 
-        <activity
-            android:name=".Kompletuj"
-            android:label="Technologie Aplikacji Serwerowych"
-            android:launchMode="singleInstance">
-        </activity>
     </application>
 
 </manifest>

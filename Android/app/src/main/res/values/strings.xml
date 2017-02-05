@@ -16,4 +16,7 @@
     <string name="toast_zalogowano">Zalogowano</string>
     <string name="brak">Bledne dane</string>
     <string name="polaczono">Polaczono</string>
+    <string name="kompletowanie">Zamowienie zostalo skompletowane</string>
+    <string name="potwierdzenie_wyslania">Wysłać?</string>
+    <string name="potwierdzenie_title">Potwierdzenie</string>
 </resources>

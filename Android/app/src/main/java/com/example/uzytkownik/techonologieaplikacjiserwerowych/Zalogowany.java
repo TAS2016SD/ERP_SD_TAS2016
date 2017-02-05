@@ -46,7 +46,7 @@ public class Zalogowany extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Zalogowany.this, Kompletuj.class);
+                Intent intent = new Intent(Zalogowany.this, Kompletuj_zamowienie.class);
                 startActivity(intent);
             }
         });

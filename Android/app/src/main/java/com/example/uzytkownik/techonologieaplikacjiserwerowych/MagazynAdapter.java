@@ -1,6 +1,10 @@
 package com.example.uzytkownik.techonologieaplikacjiserwerowych;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +15,10 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +33,7 @@ public class MagazynAdapter extends ArrayAdapter<String> {
     private final List<String> koszta;
 
     public MagazynAdapter(Context context, List<String> nazwa_materialu, List<String> liczba, List<String> koszta) {
-        super(context, R.layout.stan_magazynu, nazwa_materialu);
+        super(context, R.layout.lista_magazyn, nazwa_materialu);
         this.context = context;
         this.nazwa_materialu = nazwa_materialu;
         this.liczba = liczba;
@@ -40,7 +48,7 @@ public class MagazynAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(R.layout.stan_magazynu, parent, false);
+        View rowView = inflater.inflate(R.layout.wiersz_magazyn, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.material_nazwa);
         TextView textView2 = (TextView) rowView.findViewById(R.id.material_liczba);
         TextView textView3 = (TextView) rowView.findViewById(R.id.material_cena);
@@ -52,12 +60,92 @@ public class MagazynAdapter extends ArrayAdapter<String> {
         // Change icon based on name
         String s = nazwa_materialu.get(position);
 
-        //System.out.println(s);
-
         if (s.equals("Mleko 3,2%")) {
             imageView.setImageResource(R.drawable.mleko);
-        } else {
-            imageView.setImageResource(R.drawable.tlo);
+        }
+        else if(s.equals("orange juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_pomaranczowy);
+        }else if(s.equals("Apple juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_jablowy);
+        }
+        else if(s.equals("Grape juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_winogronowy);
+        }
+        else if(s.equals("Carrot juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_marchwiowy);
+        }
+        else if(s.equals("Strawberry juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_truskawkowy);
+        }
+        else if(s.equals("Mango juice"))
+        {
+            imageView.setImageResource(R.drawable.mango_juice);
+        }
+        else if(s.equals("Orange juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_pomaranczowy);
+        }
+        else if(s.equals("Cherry juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_wisniowy);
+        }
+        else if(s.equals("Pineapple juice"))
+        {
+           imageView.setImageResource(R.drawable.sok_ananasowy);
+        }
+        else if(s.equals("Banana juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_bananowy);
+        }
+        else if(s.equals("Raspberry juice"))
+        {
+            imageView.setImageResource(R.drawable.sok_malinowy);
+        }
+        else if(s.equals("Peach juice"))
+        {
+           imageView.setImageResource(R.drawable.sok_brzoskwiniowy);
+        }
+        else if(s.equals("Pineapple"))
+        {
+            imageView.setImageResource(R.drawable.ananas);
+        }
+        /*else if(s.equals("Apple"))
+        {
+            imageView.setImageResource(R.drawable.jablko);
+        }
+        else if(s.equals("Carrot"))
+        {
+            imageView.setImageResource(R.drawable.marchew);
+        }
+        else if(s.equals("Raspberry"))
+        {*/
+            /*try {
+                obrazek = drawableFromUrl("https://valenzanowine.com/wp-content/uploads/2016/03/redraspberries.png");
+                imageView.setImageDrawable(obrazek);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+            //imageView.setImageResource(R.drawable.malina);
+       /* }
+        else if(s.equals("Peach"))
+        {
+            imageView.setImageResource(R.drawable.brzoskwinia);
+        }
+        else if(s.equals("Orange"))
+        {
+            imageView.setImageResource(R.drawable.pomaranczki);
+        }
+        else if(s.equals("Cherry"))
+        {
+            imageView.setImageResource(R.drawable.wisnie);
+        }*/
+        else {
+            imageView.setImageResource(R.drawable.owoce);
         }
 
         return rowView;
@@ -68,18 +156,20 @@ public class MagazynAdapter extends ArrayAdapter<String> {
     }
 
 
-    public int getLayoutId(int position) {
-        if (getItemViewType(position) == ViewType.SZUKAJ.ordinal()) {
-            return R.layout.wyszukiwanie;
-        } else if (getItemViewType(position) == ViewType.TEXT.ordinal()) {
-            return R.layout.stan_magazynu;
-        } else {
-            return R.layout.stan_magazynu;
-        }
-    }
-
     @Override
     public int getItemViewType(int position) {
         return position == 0 ? ViewType.SZUKAJ.ordinal() : ViewType.TEXT.ordinal();
+    }
+
+
+    public static Drawable drawableFromUrl(String url) throws IOException {
+        Bitmap x;
+
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.connect();
+        InputStream input = connection.getInputStream();
+
+        x = BitmapFactory.decodeStream(input);
+        return new BitmapDrawable(x);
     }
 }

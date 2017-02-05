@@ -16,14 +16,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.CookieHandler;
 import java.net.CookieManager;
-import java.net.CookieStore;
 import java.util.HashMap;
+
 public class Logowanie extends Activity{
 
     public static final String NAME = "name";
@@ -34,7 +33,6 @@ public class Logowanie extends Activity{
     NetworkResponse errorRes;
     String stringData = "";
     RequestQueue requestQueue;
-
 
 
     @Override
@@ -89,7 +87,6 @@ public class Logowanie extends Activity{
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // VolleyLog.e("Error: ", error.getMessage());
                         errorRes = error.networkResponse;
                         if (errorRes != null && errorRes.data != null) {
                             try {
@@ -140,5 +137,4 @@ public class Logowanie extends Activity{
     {
         Volley.newRequestQueue(this).add(postRequest);
     }
-
 }

@@ -24,7 +24,7 @@ public class KompletujAdapter extends ArrayAdapter<String> {
 
 
     public KompletujAdapter(Context context, List<String> nazwa_clienta, List<String> id_zamowienia) {
-        super(context, R.layout.kompletuj_zamowienie, nazwa_clienta);
+        super(context, R.layout.wiersz, nazwa_clienta);
         this.context = context;
         this.nazwa_clienta = nazwa_clienta;
         this.id_zamowienia = id_zamowienia;
